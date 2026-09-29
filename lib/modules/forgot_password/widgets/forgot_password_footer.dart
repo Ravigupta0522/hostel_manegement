@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../controllers/forgot_password_controller.dart';
 
@@ -21,13 +23,13 @@ class ForgotPasswordFooter extends GetView<ForgotPasswordController> {
                 const Icon(
                   Icons.arrow_back_rounded,
                   size: 15,
-                  color: Color(0xFF00288E),
+                  color: AppColors.portalNavy,
                 ),
                 const SizedBox(width: 6),
                 Text(
-                  'Back to Login',
+                  AppStrings.backToLogin,
                   style: AppTextStyles.labelMedium.copyWith(
-                    color: const Color(0xFF00288E),
+                    color: AppColors.portalNavy,
                     fontWeight: FontWeight.w700,
                     fontSize: 13.5,
                   ),
@@ -41,7 +43,7 @@ class ForgotPasswordFooter extends GetView<ForgotPasswordController> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
             decoration: BoxDecoration(
-              color: const Color(0xFFEFF8F4),
+              color: AppColors.badgeGreenBg,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
@@ -50,13 +52,13 @@ class ForgotPasswordFooter extends GetView<ForgotPasswordController> {
                 const Icon(
                   Icons.shield_outlined,
                   size: 14,
-                  color: Color(0xFF10B981),
+                  color: AppColors.badgeGreenDot,
                 ),
                 const SizedBox(width: 6),
                 Text(
-                  'Secured via Campus Identity Provider',
+                  AppStrings.securedCampusIdentity,
                   style: AppTextStyles.labelSmall.copyWith(
-                    color: const Color(0xFF334155),
+                    color: AppColors.badgeGreenText,
                     fontWeight: FontWeight.w600,
                     fontSize: 11,
                   ),

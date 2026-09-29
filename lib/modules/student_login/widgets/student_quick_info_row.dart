@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../controllers/student_login_controller.dart';
@@ -24,7 +25,7 @@ class StudentQuickInfoRow extends GetView<StudentLoginController> {
                 decoration: BoxDecoration(
                   color: AppColors.backgroundWhite,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: const Color(0xFFE2E8F0)),
+                  border: Border.all(color: AppColors.borderLight),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withValues(alpha: 0.02),
@@ -37,7 +38,7 @@ class StudentQuickInfoRow extends GetView<StudentLoginController> {
                   children: [
                     const Icon(
                       Icons.qr_code_scanner_rounded,
-                      color: Color(0xFF0284C7),
+                      color: AppColors.portalSky,
                       size: 24,
                     ),
                     const SizedBox(width: 8),
@@ -46,18 +47,18 @@ class StudentQuickInfoRow extends GetView<StudentLoginController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Fast Gate Scan',
+                            AppStrings.fastGateScan,
                             style: AppTextStyles.labelMedium.copyWith(
-                              color: const Color(0xFF0F172A),
+                              color: AppColors.textDarkNavy,
                               fontWeight: FontWeight.w700,
                               fontSize: 12,
                             ),
                           ),
                           const SizedBox(height: 1),
                           Text(
-                            'Show Entry pass',
+                            AppStrings.showEntryPass,
                             style: AppTextStyles.bodySmall.copyWith(
-                              color: const Color(0xFF64748B),
+                              color: AppColors.textSlate,
                               fontSize: 10.5,
                             ),
                             maxLines: 1,
@@ -84,7 +85,7 @@ class StudentQuickInfoRow extends GetView<StudentLoginController> {
                 decoration: BoxDecoration(
                   color: AppColors.backgroundWhite,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: const Color(0xFFE2E8F0)),
+                  border: Border.all(color: AppColors.borderLight),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withValues(alpha: 0.02),
@@ -97,7 +98,7 @@ class StudentQuickInfoRow extends GetView<StudentLoginController> {
                   children: [
                     const Icon(
                       Icons.wifi_tethering_rounded,
-                      color: Color(0xFF059669),
+                      color: AppColors.badgeGreenText,
                       size: 24,
                     ),
                     const SizedBox(width: 8),
@@ -106,18 +107,18 @@ class StudentQuickInfoRow extends GetView<StudentLoginController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Campus SSID',
+                            AppStrings.campusSsid,
                             style: AppTextStyles.labelMedium.copyWith(
-                              color: const Color(0xFF0F172A),
+                              color: AppColors.textDarkNavy,
                               fontWeight: FontWeight.w700,
                               fontSize: 12,
                             ),
                           ),
                           const SizedBox(height: 1),
                           Text(
-                            'HostelNet-5G',
+                            AppStrings.campusWifiName,
                             style: AppTextStyles.bodySmall.copyWith(
-                              color: const Color(0xFF64748B),
+                              color: AppColors.textSlate,
                               fontSize: 10.5,
                             ),
                             maxLines: 1,

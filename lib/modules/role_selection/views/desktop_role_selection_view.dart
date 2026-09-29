@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/theme/app_colors.dart';
 import '../controllers/role_selection_controller.dart';
@@ -37,7 +37,7 @@ class DesktopRoleSelectionView extends GetView<RoleSelectionController> {
               border: Border.all(color: AppColors.border),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.primary.withOpacity(0.06),
+                  color: AppColors.primary.withValues(alpha: 0.06),
                   blurRadius: 40,
                   offset: const Offset(0, 12),
                 ),

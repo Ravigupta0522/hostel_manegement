@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 
 /// Small chip showing a feature label inside a role card.
@@ -17,19 +18,19 @@ class RoleFeatureChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: const Color(0xFFEFF5FF),
+        color: AppColors.cardLight,
         borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: const Color(0xFFD6E4F8).withValues(alpha: 0.6)),
+        border: Border.all(color: AppColors.borderSubtle.withValues(alpha: 0.6)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 12, color: const Color(0xFF28557F)),
+          Icon(icon, size: 12, color: AppColors.portalOcean),
           const SizedBox(width: 5),
           Text(
             label,
             style: AppTextStyles.labelSmall.copyWith(
-              color: const Color(0xFF28557F),
+              color: AppColors.portalOcean,
               fontWeight: FontWeight.w500,
               fontSize: 11,
             ),

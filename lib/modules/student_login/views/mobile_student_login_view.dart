@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../controllers/student_login_controller.dart';
 import '../widgets/student_login_top_bar.dart';
 import '../widgets/student_portal_badge_bar.dart';
@@ -15,7 +16,7 @@ class MobileStudentLoginView extends GetView<StudentLoginController> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0xFFF8FAFC),
+      backgroundColor: AppColors.scaffoldLight,
       body: SafeArea(
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),

@@ -11,9 +11,13 @@ import '../modules/student_register/views/student_register_view.dart';
 import '../modules/student_register/bindings/student_register_binding.dart';
 import '../modules/forgot_password/views/forgot_password_view.dart';
 import '../modules/forgot_password/bindings/forgot_password_binding.dart';
+import '../modules/otp_verification/views/otp_verification_view.dart';
+import '../modules/otp_verification/bindings/otp_verification_binding.dart';
 import '../modules/auth/views/login_view.dart';
-import '../modules/auth/views/otp_verification_view.dart';
-import '../modules/auth/views/reset_password_view.dart';
+import '../modules/reset_password/views/reset_password_view.dart';
+import '../modules/reset_password/bindings/reset_password_binding.dart';
+import '../modules/reset_password_success/views/reset_password_success_view.dart';
+import '../modules/reset_password_success/bindings/reset_password_success_binding.dart';
 import '../modules/auth/bindings/auth_binding.dart';
 import '../modules/student/dashboard/views/student_dashboard_view.dart';
 import '../modules/admin/dashboard/views/admin_dashboard_view.dart';
@@ -91,14 +95,21 @@ class AppPages {
     GetPage(
       name: AppRoutes.otpVerification,
       page: () => const OtpVerificationView(),
-      binding: AuthBinding(),
+      binding: OtpVerificationBinding(),
       transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 300),
     ),
     GetPage(
       name: AppRoutes.resetPassword,
       page: () => const ResetPasswordView(),
-      binding: AuthBinding(),
+      binding: ResetPasswordBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.resetPasswordSuccess,
+      page: () => const ResetPasswordSuccessView(),
+      binding: ResetPasswordSuccessBinding(),
       transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 300),
     ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../controllers/student_register_controller.dart';
@@ -61,9 +62,9 @@ class StudentRegisterTopBar extends GetView<StudentRegisterController> {
               ),
               const SizedBox(width: 8),
               Text(
-                'HostelFlow',
+                AppStrings.appName,
                 style: AppTextStyles.titleMedium.copyWith(
-                  color: const Color(0xFF0F172A),
+                  color: AppColors.textDarkNavy,
                   fontWeight: FontWeight.w700,
                   fontSize: 18,
                   letterSpacing: -0.3,
@@ -77,7 +78,7 @@ class StudentRegisterTopBar extends GetView<StudentRegisterController> {
             width: 36,
             height: 36,
             decoration: const BoxDecoration(
-              color: Color(0xFF00288E),
+              color: AppColors.portalNavy,
               shape: BoxShape.circle,
             ),
             child: const Icon(

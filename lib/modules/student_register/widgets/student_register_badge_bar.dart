@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 
 class StudentRegisterBadgeBar extends StatelessWidget {
@@ -15,7 +17,7 @@ class StudentRegisterBadgeBar extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5.5),
             decoration: BoxDecoration(
-              color: const Color(0xFFDFF0FD),
+              color: AppColors.badgeBlueBg,
               borderRadius: BorderRadius.circular(16),
             ),
             child: Row(
@@ -24,13 +26,13 @@ class StudentRegisterBadgeBar extends StatelessWidget {
                 const Icon(
                   Icons.badge_outlined,
                   size: 14,
-                  color: Color(0xFF006591),
+                  color: AppColors.portalOcean,
                 ),
                 const SizedBox(width: 5),
                 Text(
-                  'RESIDENT REGISTRATION',
+                  AppStrings.residentRegistration,
                   style: AppTextStyles.labelSmall.copyWith(
-                    color: const Color(0xFF006591),
+                    color: AppColors.portalOcean,
                     fontWeight: FontWeight.w700,
                     fontSize: 11,
                     letterSpacing: 0.3,
@@ -44,7 +46,7 @@ class StudentRegisterBadgeBar extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5.5),
             decoration: BoxDecoration(
-              color: const Color(0xFFF1F3FD),
+              color: AppColors.cardLightAlt,
               borderRadius: BorderRadius.circular(16),
             ),
             child: Row(
@@ -54,15 +56,15 @@ class StudentRegisterBadgeBar extends StatelessWidget {
                   width: 6,
                   height: 6,
                   decoration: const BoxDecoration(
-                    color: Color(0xFF10B981),
+                    color: AppColors.badgeGreenDot,
                     shape: BoxShape.circle,
                   ),
                 ),
                 const SizedBox(width: 5),
                 Text(
-                  'Term Fall 2025',
+                  AppStrings.termFall2025,
                   style: AppTextStyles.labelSmall.copyWith(
-                    color: const Color(0xFF475569),
+                    color: AppColors.textSlate,
                     fontWeight: FontWeight.w600,
                     fontSize: 11,
                   ),

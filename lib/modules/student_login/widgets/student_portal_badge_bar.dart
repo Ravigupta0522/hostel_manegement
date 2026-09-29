@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../controllers/student_login_controller.dart';
@@ -18,7 +19,7 @@ class StudentPortalBadgeBar extends GetView<StudentLoginController> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: const Color(0xFFE8F2FC),
+              color: AppColors.badgeBlueBg,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
@@ -28,15 +29,15 @@ class StudentPortalBadgeBar extends GetView<StudentLoginController> {
                   width: 7,
                   height: 7,
                   decoration: const BoxDecoration(
-                    color: Color(0xFF0284C7),
+                    color: AppColors.portalSky,
                     shape: BoxShape.circle,
                   ),
                 ),
                 const SizedBox(width: 7),
                 Text(
-                  'Student / Resident Portal',
+                  AppStrings.studentPortalTitle,
                   style: AppTextStyles.labelSmall.copyWith(
-                    color: const Color(0xFF006591),
+                    color: AppColors.portalOcean,
                     fontWeight: FontWeight.w600,
                     fontSize: 12,
                   ),
@@ -54,7 +55,7 @@ class StudentPortalBadgeBar extends GetView<StudentLoginController> {
               decoration: BoxDecoration(
                 color: AppColors.backgroundWhite,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: const Color(0xFFD0E0F4)),
+                border: Border.all(color: AppColors.borderSubtle),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.03),
@@ -69,13 +70,13 @@ class StudentPortalBadgeBar extends GetView<StudentLoginController> {
                   const Icon(
                     Icons.sync_alt_rounded,
                     size: 14,
-                    color: Color(0xFF00288E),
+                    color: AppColors.portalNavy,
                   ),
                   const SizedBox(width: 5),
                   Text(
-                    'Switch to Admin',
+                    AppStrings.switchToAdmin,
                     style: AppTextStyles.labelSmall.copyWith(
-                      color: const Color(0xFF00288E),
+                      color: AppColors.portalNavy,
                       fontWeight: FontWeight.w600,
                       fontSize: 11.5,
                     ),

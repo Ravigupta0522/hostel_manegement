@@ -119,7 +119,7 @@ class RoleCard extends StatelessWidget {
             Text(
               data.subtitle,
               style: AppTextStyles.bodySmall.copyWith(
-                color: const Color(0xFF5F6B7A),
+                color: AppColors.textSecondary,
                 height: 1.45,
                 fontSize: 12,
               ),
