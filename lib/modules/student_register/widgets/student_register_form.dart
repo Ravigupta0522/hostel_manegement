@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../controllers/student_register_controller.dart';
 import 'password_strength_indicator.dart';
@@ -23,17 +25,17 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Full Name',
+                  AppStrings.fieldFullName,
                   style: AppTextStyles.labelMedium.copyWith(
-                    color: const Color(0xFF0F172A),
+                    color: AppColors.textDarkNavy,
                     fontWeight: FontWeight.w700,
                     fontSize: 13,
                   ),
                 ),
                 Text(
-                  'Official Legal Name',
+                  AppStrings.officialLegalName,
                   style: AppTextStyles.labelSmall.copyWith(
-                    color: const Color(0xFF94A3B8),
+                    color: AppColors.textMuted,
                     fontSize: 11.5,
                   ),
                 ),
@@ -43,20 +45,20 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
             TextFormField(
               controller: controller.fullNameController,
               style: AppTextStyles.bodyMedium.copyWith(
-                color: const Color(0xFF0F172A),
+                color: AppColors.textDarkNavy,
                 fontSize: 14,
               ),
               decoration: InputDecoration(
-                hintText: 'e.g. Marcus Richardson',
+                hintText: AppStrings.fullNameHint,
                 hintStyle: AppTextStyles.bodySmall.copyWith(
-                  color: const Color(0xFF94A3B8),
+                  color: AppColors.textMuted,
                   fontSize: 14,
                 ),
                 filled: true,
                 fillColor: Colors.white,
                 prefixIcon: const Icon(
                   Icons.person_outline_rounded,
-                  color: Color(0xFF64748B),
+                  color: AppColors.textSlate,
                   size: 20,
                 ),
                 contentPadding: const EdgeInsets.symmetric(
@@ -65,24 +67,24 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                  borderSide: const BorderSide(color: AppColors.borderLight),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                  borderSide: const BorderSide(color: AppColors.borderLight),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide:
-                      const BorderSide(color: Color(0xFF00288E), width: 1.5),
+                      const BorderSide(color: AppColors.portalNavy, width: 1.5),
                 ),
               ),
               validator: (val) {
                 if (val == null || val.trim().isEmpty) {
-                  return 'Please enter your full name';
+                  return AppStrings.validationRequired;
                 }
                 if (val.trim().length < 2) {
-                  return 'Name must be at least 2 characters';
+                  return AppStrings.validationNameMin;
                 }
                 return null;
               },
@@ -94,9 +96,9 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Student ID / Roll No.',
+                  AppStrings.studentIdRollNo,
                   style: AppTextStyles.labelMedium.copyWith(
-                    color: const Color(0xFF0F172A),
+                    color: AppColors.textDarkNavy,
                     fontWeight: FontWeight.w700,
                     fontSize: 13,
                   ),
@@ -112,7 +114,7 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                   child: const Icon(
                     Icons.help_outline_rounded,
                     size: 16,
-                    color: Color(0xFF64748B),
+                    color: AppColors.textSlate,
                   ),
                 ),
               ],
@@ -122,20 +124,20 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
               controller: controller.studentIdController,
               textCapitalization: TextCapitalization.characters,
               style: AppTextStyles.bodyMedium.copyWith(
-                color: const Color(0xFF0F172A),
+                color: AppColors.textDarkNavy,
                 fontSize: 14,
               ),
               decoration: InputDecoration(
-                hintText: 'E.G. 2025-ENG-4029',
+                hintText: AppStrings.studentIdHint,
                 hintStyle: AppTextStyles.bodySmall.copyWith(
-                  color: const Color(0xFF94A3B8),
+                  color: AppColors.textMuted,
                   fontSize: 14,
                 ),
                 filled: true,
                 fillColor: Colors.white,
                 prefixIcon: const Icon(
                   Icons.numbers_rounded,
-                  color: Color(0xFF64748B),
+                  color: AppColors.textSlate,
                   size: 20,
                 ),
                 contentPadding: const EdgeInsets.symmetric(
@@ -144,21 +146,21 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                  borderSide: const BorderSide(color: AppColors.borderLight),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                  borderSide: const BorderSide(color: AppColors.borderLight),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide:
-                      const BorderSide(color: Color(0xFF00288E), width: 1.5),
+                      const BorderSide(color: AppColors.portalNavy, width: 1.5),
                 ),
               ),
               validator: (val) {
                 if (val == null || val.trim().isEmpty) {
-                  return 'Please enter your student ID / roll number';
+                  return AppStrings.validationRequired;
                 }
                 return null;
               },
@@ -169,13 +171,13 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                 const Icon(
                   Icons.check_circle_outline_rounded,
                   size: 13,
-                  color: Color(0xFF10B981),
+                  color: AppColors.badgeGreenDot,
                 ),
                 const SizedBox(width: 5),
                 Text(
-                  'Matches academic registrar records',
+                  AppStrings.matchesRegistrar,
                   style: AppTextStyles.bodySmall.copyWith(
-                    color: const Color(0xFF64748B),
+                    color: AppColors.textSlate,
                     fontSize: 11,
                   ),
                 ),
@@ -185,9 +187,9 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
 
             // ── 3. Official Email
             Text(
-              'Official Email',
+              AppStrings.officialEmail,
               style: AppTextStyles.labelMedium.copyWith(
-                color: const Color(0xFF0F172A),
+                color: AppColors.textDarkNavy,
                 fontWeight: FontWeight.w700,
                 fontSize: 13,
               ),
@@ -197,20 +199,20 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
               controller: controller.emailController,
               keyboardType: TextInputType.emailAddress,
               style: AppTextStyles.bodyMedium.copyWith(
-                color: const Color(0xFF0F172A),
+                color: AppColors.textDarkNavy,
                 fontSize: 14,
               ),
               decoration: InputDecoration(
-                hintText: 'e.g. marcus.r@campus.edu',
+                hintText: AppStrings.officialEmailHint,
                 hintStyle: AppTextStyles.bodySmall.copyWith(
-                  color: const Color(0xFF94A3B8),
+                  color: AppColors.textMuted,
                   fontSize: 14,
                 ),
                 filled: true,
                 fillColor: Colors.white,
                 prefixIcon: const Icon(
                   Icons.mail_outline_rounded,
-                  color: Color(0xFF64748B),
+                  color: AppColors.textSlate,
                   size: 20,
                 ),
                 contentPadding: const EdgeInsets.symmetric(
@@ -219,33 +221,33 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                  borderSide: const BorderSide(color: AppColors.borderLight),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                  borderSide: const BorderSide(color: AppColors.borderLight),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide:
-                      const BorderSide(color: Color(0xFF00288E), width: 1.5),
+                      const BorderSide(color: AppColors.portalNavy, width: 1.5),
                 ),
               ),
               validator: (val) {
                 if (val == null || val.trim().isEmpty) {
-                  return 'Email is required';
+                  return AppStrings.validationRequired;
                 }
                 if (!GetUtils.isEmail(val.trim())) {
-                  return 'Enter a valid email address';
+                  return AppStrings.validationEmailInvalid;
                 }
                 return null;
               },
             ),
             const SizedBox(height: 4),
             Text(
-              'Must end in institutional domain (@campus.edu)',
+              AppStrings.institutionalDomainHint,
               style: AppTextStyles.bodySmall.copyWith(
-                color: const Color(0xFF64748B),
+                color: AppColors.textSlate,
                 fontSize: 11,
               ),
             ),
@@ -253,9 +255,9 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
 
             // ── 4. Phone Number
             Text(
-              'Phone Number',
+              AppStrings.fieldPhone,
               style: AppTextStyles.labelMedium.copyWith(
-                color: const Color(0xFF0F172A),
+                color: AppColors.textDarkNavy,
                 fontWeight: FontWeight.w700,
                 fontSize: 13,
               ),
@@ -266,9 +268,9 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
 
             // ── 5. Password
             Text(
-              'Password',
+              AppStrings.fieldPassword,
               style: AppTextStyles.labelMedium.copyWith(
-                color: const Color(0xFF0F172A),
+                color: AppColors.textDarkNavy,
                 fontWeight: FontWeight.w700,
                 fontSize: 13,
               ),
@@ -280,13 +282,13 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                 obscureText: !controller.isPasswordVisible.value,
                 onChanged: controller.onPasswordChanged,
                 style: AppTextStyles.bodyMedium.copyWith(
-                  color: const Color(0xFF0F172A),
+                  color: AppColors.textDarkNavy,
                   fontSize: 14,
                 ),
                 decoration: InputDecoration(
-                  hintText: '••••••••••••',
+                  hintText: AppStrings.studentPasswordHint,
                   hintStyle: AppTextStyles.bodySmall.copyWith(
-                    color: const Color(0xFF94A3B8),
+                    color: AppColors.textMuted,
                     fontSize: 16,
                     letterSpacing: 2,
                   ),
@@ -294,7 +296,7 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                   fillColor: Colors.white,
                   prefixIcon: const Icon(
                     Icons.lock_outline_rounded,
-                    color: Color(0xFF64748B),
+                    color: AppColors.textSlate,
                     size: 20,
                   ),
                   suffixIcon: IconButton(
@@ -302,7 +304,7 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                       controller.isPasswordVisible.value
                           ? Icons.visibility_outlined
                           : Icons.visibility_off_outlined,
-                      color: const Color(0xFF64748B),
+                      color: AppColors.textSlate,
                       size: 20,
                     ),
                     onPressed: controller.togglePasswordVisibility,
@@ -313,24 +315,24 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                    borderSide: const BorderSide(color: AppColors.borderLight),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                    borderSide: const BorderSide(color: AppColors.borderLight),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide:
-                        const BorderSide(color: Color(0xFF00288E), width: 1.5),
+                        const BorderSide(color: AppColors.portalNavy, width: 1.5),
                   ),
                 ),
                 validator: (val) {
                   if (val == null || val.isEmpty) {
-                    return 'Password is required';
+                    return AppStrings.validationRequired;
                   }
                   if (val.length < 8) {
-                    return 'Password must be at least 8 characters';
+                    return AppStrings.validationPasswordMin;
                   }
                   return null;
                 },
@@ -341,9 +343,9 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
 
             // ── 6. Confirm Password
             Text(
-              'Confirm Password',
+              AppStrings.fieldConfirmPassword,
               style: AppTextStyles.labelMedium.copyWith(
-                color: const Color(0xFF0F172A),
+                color: AppColors.textDarkNavy,
                 fontWeight: FontWeight.w700,
                 fontSize: 13,
               ),
@@ -354,13 +356,13 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                 controller: controller.confirmPasswordController,
                 obscureText: !controller.isConfirmPasswordVisible.value,
                 style: AppTextStyles.bodyMedium.copyWith(
-                  color: const Color(0xFF0F172A),
+                  color: AppColors.textDarkNavy,
                   fontSize: 14,
                 ),
                 decoration: InputDecoration(
-                  hintText: '••••••••••••',
+                  hintText: AppStrings.studentPasswordHint,
                   hintStyle: AppTextStyles.bodySmall.copyWith(
-                    color: const Color(0xFF94A3B8),
+                    color: AppColors.textMuted,
                     fontSize: 16,
                     letterSpacing: 2,
                   ),
@@ -368,7 +370,7 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                   fillColor: Colors.white,
                   prefixIcon: const Icon(
                     Icons.lock_reset_rounded,
-                    color: Color(0xFF64748B),
+                    color: AppColors.textSlate,
                     size: 20,
                   ),
                   suffixIcon: IconButton(
@@ -376,7 +378,7 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                       controller.isConfirmPasswordVisible.value
                           ? Icons.visibility_outlined
                           : Icons.visibility_off_outlined,
-                      color: const Color(0xFF64748B),
+                      color: AppColors.textSlate,
                       size: 20,
                     ),
                     onPressed: controller.toggleConfirmPasswordVisibility,
@@ -387,24 +389,24 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                    borderSide: const BorderSide(color: AppColors.borderLight),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                    borderSide: const BorderSide(color: AppColors.borderLight),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide:
-                        const BorderSide(color: Color(0xFF00288E), width: 1.5),
+                        const BorderSide(color: AppColors.portalNavy, width: 1.5),
                   ),
                 ),
                 validator: (val) {
                   if (val == null || val.isEmpty) {
-                    return 'Please confirm your password';
+                    return AppStrings.validationRequired;
                   }
                   if (val != controller.passwordController.text) {
-                    return 'Passwords do not match';
+                    return AppStrings.validationPasswordMismatch;
                   }
                   return null;
                 },
@@ -426,11 +428,11 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                   height: 48,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF00288E),
+                    color: AppColors.portalNavy,
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF00288E).withValues(alpha: 0.28),
+                        color: AppColors.portalNavy.withValues(alpha: 0.28),
                         blurRadius: 12,
                         offset: const Offset(0, 4),
                       ),
@@ -450,7 +452,7 @@ class StudentRegisterForm extends GetView<StudentRegisterController> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Create Account',
+                              AppStrings.createAccountButton,
                               style: AppTextStyles.labelLarge.copyWith(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,

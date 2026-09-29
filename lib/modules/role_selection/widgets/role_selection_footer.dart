@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 
@@ -91,7 +91,7 @@ class RoleSelectionFooter extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                WidgetSpan(
+                const WidgetSpan(
                   child: Icon(Icons.open_in_new_rounded,
                       size: 11, color: AppColors.primary),
                 ),

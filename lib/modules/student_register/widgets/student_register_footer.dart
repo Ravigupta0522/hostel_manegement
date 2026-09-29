@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../controllers/student_register_controller.dart';
 
@@ -16,21 +18,21 @@ class StudentRegisterFooter extends GetView<StudentRegisterController> {
           Row(
             children: [
               const Expanded(
-                child: Divider(color: Color(0xFFE2E8F0), thickness: 1),
+                child: Divider(color: AppColors.borderLight, thickness: 1),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Text(
                   'OR',
                   style: AppTextStyles.bodySmall.copyWith(
-                    color: const Color(0xFF94A3B8),
+                    color: AppColors.textMuted,
                     fontSize: 11.5,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
               const Expanded(
-                child: Divider(color: Color(0xFFE2E8F0), thickness: 1),
+                child: Divider(color: AppColors.borderLight, thickness: 1),
               ),
             ],
           ),
@@ -41,18 +43,18 @@ class StudentRegisterFooter extends GetView<StudentRegisterController> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Already registered? ',
+                AppStrings.alreadyRegistered,
                 style: AppTextStyles.bodySmall.copyWith(
-                  color: const Color(0xFF64748B),
+                  color: AppColors.textSlate,
                   fontSize: 13,
                 ),
               ),
               InkWell(
                 onTap: controller.goToLogin,
                 child: Text(
-                  'Log in',
+                  AppStrings.logIn,
                   style: AppTextStyles.labelMedium.copyWith(
-                    color: const Color(0xFF00288E),
+                    color: AppColors.portalNavy,
                     fontWeight: FontWeight.w700,
                     fontSize: 13,
                   ),
@@ -66,7 +68,7 @@ class StudentRegisterFooter extends GetView<StudentRegisterController> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
             decoration: BoxDecoration(
-              color: const Color(0xFFEFF6FE),
+              color: AppColors.cardLight,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
@@ -75,13 +77,13 @@ class StudentRegisterFooter extends GetView<StudentRegisterController> {
                 const Icon(
                   Icons.lock_rounded,
                   size: 13,
-                  color: Color(0xFF006591),
+                  color: AppColors.portalOcean,
                 ),
                 const SizedBox(width: 6),
                 Text(
-                  '256-Bit Encrypted Campus Student Portal',
+                  AppStrings.encryptedBadge,
                   style: AppTextStyles.labelSmall.copyWith(
-                    color: const Color(0xFF006591),
+                    color: AppColors.portalOcean,
                     fontWeight: FontWeight.w600,
                     fontSize: 11,
                   ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../controllers/student_register_controller.dart';
 
@@ -17,9 +19,9 @@ class PhoneNumberField extends GetView<StudentRegisterController> {
             height: 48,
             padding: const EdgeInsets.symmetric(horizontal: 10),
             decoration: BoxDecoration(
-              color: const Color(0xFFF8FAFC),
+              color: AppColors.fieldBgLight,
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: const Color(0xFFE2E8F0)),
+              border: Border.all(color: AppColors.borderLight),
             ),
             alignment: Alignment.center,
             child: DropdownButtonHideUnderline(
@@ -27,11 +29,11 @@ class PhoneNumberField extends GetView<StudentRegisterController> {
                 value: controller.selectedCountryCode.value,
                 icon: const Icon(
                   Icons.keyboard_arrow_down_rounded,
-                  color: Color(0xFF64748B),
+                  color: AppColors.textSlate,
                   size: 18,
                 ),
                 style: AppTextStyles.bodyMedium.copyWith(
-                  color: const Color(0xFF0F172A),
+                  color: AppColors.textDarkNavy,
                   fontWeight: FontWeight.w600,
                   fontSize: 13,
                 ),
@@ -56,20 +58,20 @@ class PhoneNumberField extends GetView<StudentRegisterController> {
             controller: controller.phoneController,
             keyboardType: TextInputType.phone,
             style: AppTextStyles.bodyMedium.copyWith(
-              color: const Color(0xFF0F172A),
+              color: AppColors.textDarkNavy,
               fontSize: 14,
             ),
             decoration: InputDecoration(
-              hintText: '98765 43210',
+              hintText: AppStrings.phoneHint,
               hintStyle: AppTextStyles.bodySmall.copyWith(
-                color: const Color(0xFF94A3B8),
+                color: AppColors.textMuted,
                 fontSize: 14,
               ),
               filled: true,
               fillColor: Colors.white,
               prefixIcon: const Icon(
                 Icons.phone_outlined,
-                color: Color(0xFF64748B),
+                color: AppColors.textSlate,
                 size: 20,
               ),
               contentPadding: const EdgeInsets.symmetric(
@@ -78,24 +80,24 @@ class PhoneNumberField extends GetView<StudentRegisterController> {
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                borderSide: const BorderSide(color: AppColors.borderLight),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                borderSide: const BorderSide(color: AppColors.borderLight),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide:
-                    const BorderSide(color: Color(0xFF00288E), width: 1.5),
+                    const BorderSide(color: AppColors.portalNavy, width: 1.5),
               ),
             ),
             validator: (val) {
               if (val == null || val.trim().isEmpty) {
-                return 'Phone number is required';
+                return AppStrings.validationRequired;
               }
               if (val.trim().length < 10) {
-                return 'Enter a valid 10-digit phone number';
+                return AppStrings.validationPhoneInvalid;
               }
               return null;
             },

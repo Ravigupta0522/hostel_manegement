@@ -60,9 +60,108 @@ class AppStrings {
   static const String registerLoginLink = 'Login';
 
   // ─────────────────────────────────────────────
-  // Auth — Forgot Password
+  // Auth — Student Portal Login
+  // ─────────────────────────────────────────────
+  static const String studentPortalTitle = 'Student / Resident Portal';
+  static const String switchToAdmin = 'Switch to Admin';
+  static const String semesterAutumn2024 = 'Semester Autumn 2024';
+  static const String hallDetails = 'North Wing • Block C • Digital Hall Access';
+  static const String studentLoginTitle = 'Welcome Back';
+  static const String studentLoginSubtitle =
+      'Enter your campus credentials to access your hostel account.';
+  static const String studentEmailOrId = 'Email / Student ID';
+  static const String studentEmailOrIdFormat = 'Format: 2024-CS-108';
+  static const String studentEmailOrIdHint =
+      'student.id@campus.edu or 2024-CS-10';
+  static const String studentPasswordHint = '••••••••••••';
+  static const String studentRememberMe = 'Remember me';
+  static const String studentForgotPassword = 'Forgot password?';
+  static const String studentSignInButton = 'Sign In to Portal';
+  static const String wardenLoginNotice = 'Logging in as Hostel Warden ...';
+  static const String wardenLoginSub = 'Access room allocations & ma...';
+  static const String switchPortalButton = 'Switch portal';
+  static const String fastGateScan = 'Fast Gate Scan';
+  static const String showEntryPass = 'Show Entry pass';
+  static const String campusSsid = 'Campus SSID';
+  static const String campusWifiName = 'HostelNet-5G';
+  static const String registerHere = 'Register here';
+  static const String hostelHelpdesk = 'Hostel Helpdesk';
+  static const String dormGuidelines = 'Dorm Guidelines';
+  static const String dutyWarden = 'Duty Warden';
+
+  // ─────────────────────────────────────────────
+  // Auth — Student Register
+  // ─────────────────────────────────────────────
+  static const String residentRegistration = 'RESIDENT REGISTRATION';
+  static const String termFall2025 = 'Term Fall 2025';
+  static const String createStudentAccount = 'Create Student Account';
+  static const String createStudentAccountSub =
+      'Register with your official campus enrollment details to access your dorm & hostel pass.';
+  static const String officialLegalName = 'Official Legal Name';
+  static const String fullNameHint = 'e.g. Marcus Richardson';
+  static const String studentIdRollNo = 'Student ID / Roll No.';
+  static const String studentIdHint = 'E.G. 2025-ENG-4029';
+  static const String matchesRegistrar = 'Matches academic registrar records';
+  static const String officialEmail = 'Official Email';
+  static const String officialEmailHint = 'e.g. marcus.r@campus.edu';
+  static const String institutionalDomainHint =
+      'Must end in institutional domain (@campus.edu)';
+  static const String phoneHint = '98765 43210';
+  static const String min8CharsHint =
+      'Minimum 8 characters with numbers & symbols';
+  static const String termsNoticePart1 = 'I agree to the ';
+  static const String hostelRulesTitle = 'Hostel Rules & Terms of Residence';
+  static const String termsNoticePart2 = ' and acknowledge the university ';
+  static const String privacyPolicyTitle = 'Privacy Policy';
+  static const String createAccountButton = 'Create Account';
+  static const String alreadyRegistered = 'Already registered? ';
+  static const String logIn = 'Log in';
+  static const String encryptedBadge =
+      '256-Bit Encrypted Campus Student Portal';
+
+  // ─────────────────────────────────────────────
+  // Auth — Forgot Password & OTP
   // ─────────────────────────────────────────────
   static const String forgotPassword = 'Forgot Password';
+  static const String forgotPasswordHeroTitle = 'Forgot Password?';
+  static const String forgotPasswordHeroSub =
+      "No worries! Enter your registered campus email or Student ID, and we'll send a 6-digit verification code to reset your password.";
+  static const String codesExpire10Min = 'Codes expire after 10 minutes';
+  static const String emailOrStudentId = 'Email or Student ID';
+  static const String campusActive = 'Campus Active';
+  static const String credentialAssignedHint =
+      'Use the credential assigned during hostel room allotment.';
+  static const String sendVerificationCode = 'Send Verification Code';
+  static const String havingTroubleWarden =
+      'Having trouble with campus em...';
+  static const String visitWardenDesk = 'Visit Warden Desk at Hall Block 4';
+  static const String deskInfo = 'Desk Info';
+  static const String backToLogin = 'Back to Login';
+  static const String securedCampusIdentity =
+      'Secured via Campus Identity Provider';
+
+  // ─────────────────────────────────────────────
+  // Auth — OTP Verification
+  // ─────────────────────────────────────────────
+  static const String studentPortalVerification =
+      'Student Portal Verification';
+  static const String verifyCodeTitle = 'Verify Code';
+  static const String verifyCodeSub =
+      'We sent a 6-digit OTP code to your registered\nuniversity address';
+  static const String edit = 'Edit';
+  static const String securityPasscode = 'SECURITY PASSCODE';
+  static const String expiringSoon = 'Expiring soon';
+  static const String resendCodeIn = 'Resend code in ';
+  static const String resendOtpNow = 'Resend OTP now';
+  static const String verifyAndProceed = 'Verify & Proceed';
+  static const String didntReceiveEmail = "Didn't receive the email?";
+  static const String spamFilterAdvice =
+      'Please check your spam/junk folder or institutional filters. University domains occasionally quarantine automated alerts.';
+  static const String contactWardenOffice = 'Contact Hostel Warden Office';
+  static const String tryViaSms = 'Try receiving passcode via SMS instead';
+  static const String ssoSessionSecured =
+      'HostelFlow Single Sign-On Secured • Session ID: #HF-8924';
+
   static const String forgotPasswordTitle = 'Reset Password';
   static const String forgotPasswordSubtitle =
       'Enter your registered email to receive a reset link.';
@@ -71,7 +170,7 @@ class AppStrings {
       'Reset link sent! Check your email.';
 
   // ─────────────────────────────────────────────
-  // Auth — OTP Verification
+  // Auth — OTP Verification (Generic)
   // ─────────────────────────────────────────────
   static const String otpVerification = 'OTP Verification';
   static const String otpTitle = 'Verify OTP';
@@ -83,13 +182,85 @@ class AppStrings {
   static const String otpExpired = 'OTP has expired. Please request a new one.';
 
   // ─────────────────────────────────────────────
-  // Auth — Reset Password
+  // Auth — Set New Password
   // ─────────────────────────────────────────────
   static const String resetPassword = 'Reset Password';
   static const String resetPasswordTitle = 'Set New Password';
   static const String resetPasswordSubtitle = 'Your new password must be strong';
   static const String resetPasswordButton = 'Update Password';
   static const String resetPasswordSuccess = 'Password updated successfully!';
+  static const String accountSecurity = 'ACCOUNT SECURITY';
+  static const String setNewPasswordTitle = 'Set New Password';
+  static const String setNewPasswordSub =
+      'Must be at least 8 characters and include at least one number or special character.';
+  static const String newPassword = 'New Password';
+  static const String requiredLabel = 'Required';
+  static const String securityStrength = 'Security Strength';
+  static const String strengthStrong = 'Strong';
+  static const String strengthGood = 'Good';
+  static const String strengthFair = 'Fair';
+  static const String strengthWeak = 'Weak';
+  static const String confirmNewPassword = 'Confirm New Password';
+  static const String matched = 'Matched';
+  static const String passwordRequirements = 'PASSWORD REQUIREMENTS';
+  static const String reqMin8Chars = 'At least 8 characters';
+  static const String reqOneNumeric = 'At least one numeric digit';
+  static const String reqMatchConfirmed = 'Match confirmed password';
+  static const String resetPasswordAction = 'Reset Password';
+  static const String havingTroubleWardenOffice =
+      'Having trouble? Contact Hostel Warden Office';
+
+  // ─────────────────────────────────────────────
+  // Auth — Password Reset Complete
+  // ─────────────────────────────────────────────
+  static const String accountSecurityUpdated = 'ACCOUNT SECURITY UPDATED';
+  static const String passwordResetComplete = 'Password Reset Complete!';
+  static const String passwordResetCompleteSub =
+      'Your password has been successfully updated. You can now log into your HostelFlow resident or admin account with your new credentials.';
+  static const String campusPortalTitle = 'HostelFlow Campus Portal';
+  static const String residencyAccessDetails =
+      'North Wing • Hall 4 Residency Access';
+  static const String ssoActive = 'Single Sign-On Active';
+  static const String sessionsSecured = 'Sessions Secured';
+  static const String sessionsSecuredNotice =
+      'Your active sessions have been secured. If you did not make this change, please immediately contact the Campus IT Desk.';
+  static const String contactItSupportDesk = 'Contact IT Support Desk';
+  static const String encryptedStudentCredentialChannel =
+      'Encrypted 256-bit student credential channel';
+
+  // ─────────────────────────────────────────────
+  // Auth — Security Feedback & Snackbars
+  // ─────────────────────────────────────────────
+  static const String snackWeakPasswordTitle = 'Weak Password';
+  static const String snackWeakPasswordMsg =
+      'Password must be at least 8 characters and include a number or symbol.';
+  static const String snackPasswordMismatchTitle = 'Passwords Do Not Match';
+  static const String snackPasswordMismatchMsg =
+      'Please ensure both passwords match identically.';
+  static const String snackWardenHelpdeskTitle = 'Warden Office Helpdesk';
+  static const String snackWardenHelpdeskMsg =
+      'Contact Campus Warden: Ext 4022 | Hall Block 4 Incharge Desk';
+  static const String snackItSupportTitle = 'IT Support Desk';
+  static const String snackItSupportMsg =
+      'Connecting to Campus IT Support: support@campus.edu | Hall 4 Helpdesk';
+  static const String snackSessionClearedTitle = 'Session Cleared';
+  static const String snackSessionClearedMsg =
+      'Active campus sessions have been refreshed.';
+  static const String snackOtpIncompleteTitle = 'Incomplete Code';
+  static const String snackOtpIncompleteMsg =
+      'Please enter all 6 digits of the verification passcode.';
+  static const String snackOtpVerifiedTitle = 'Verification Success';
+  static const String snackOtpVerifiedMsg =
+      'Your identity has been authenticated.';
+  static const String snackOtpResentTitle = 'Code Resent';
+  static const String snackOtpResentMsgPrefix =
+      'A fresh 6-digit OTP passcode has been sent to ';
+  static const String snackSmsDispatchedTitle = 'SMS Dispatch';
+  static const String snackSmsDispatchedMsg =
+      'Passcode sent to registered mobile number ending in •••• 3210';
+  static const String dialogUpdateEmailTitle = 'Update Campus Email';
+  static const String dialogUpdateEmailHint = 'Enter new email address';
+  static const String dialogUpdateEmailConfirm = 'Update';
 
   // ─────────────────────────────────────────────
   // Form Fields

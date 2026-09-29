@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../controllers/forgot_password_controller.dart';
 import '../widgets/forgot_password_footer.dart';
 import '../widgets/forgot_password_form_card.dart';
@@ -14,7 +15,7 @@ class MobileForgotPasswordView extends GetView<ForgotPasswordController> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0xFFF8FAFC),
+      backgroundColor: AppColors.scaffoldLight,
       body: SafeArea(
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),

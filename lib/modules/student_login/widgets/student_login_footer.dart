@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../controllers/student_login_controller.dart';
 
@@ -17,18 +19,18 @@ class StudentLoginFooter extends GetView<StudentLoginController> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Don't have an account? ",
+                AppStrings.loginNoAccount,
                 style: AppTextStyles.bodySmall.copyWith(
-                  color: const Color(0xFF64748B),
+                  color: AppColors.textSlate,
                   fontSize: 13,
                 ),
               ),
               InkWell(
                 onTap: controller.goToRegister,
                 child: Text(
-                  'Register here',
+                  AppStrings.registerHere,
                   style: AppTextStyles.labelMedium.copyWith(
-                    color: const Color(0xFF00288E),
+                    color: AppColors.portalNavy,
                     fontWeight: FontWeight.w700,
                     fontSize: 13,
                   ),
@@ -42,15 +44,15 @@ class StudentLoginFooter extends GetView<StudentLoginController> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildFooterLink('Hostel Helpdesk', () {
+              _buildFooterLink(AppStrings.hostelHelpdesk, () {
                 Get.snackbar('Helpdesk', 'Calling Campus Helpdesk: 1800-HOSTEL');
               }),
               _buildBullet(),
-              _buildFooterLink('Dorm Guidelines', () {
+              _buildFooterLink(AppStrings.dormGuidelines, () {
                 Get.snackbar('Guidelines', 'Hostel Code of Conduct & Policies');
               }),
               _buildBullet(),
-              _buildFooterLink('Duty Warden', () {
+              _buildFooterLink(AppStrings.dutyWarden, () {
                 Get.snackbar('Duty Warden', 'Warden on Duty: Prof. S. Sharma');
               }),
             ],
@@ -66,7 +68,7 @@ class StudentLoginFooter extends GetView<StudentLoginController> {
       child: Text(
         '•',
         style: TextStyle(
-          color: Color(0xFF94A3B8),
+          color: AppColors.textMuted,
           fontSize: 12,
         ),
       ),
@@ -79,7 +81,7 @@ class StudentLoginFooter extends GetView<StudentLoginController> {
       child: Text(
         label,
         style: AppTextStyles.bodySmall.copyWith(
-          color: const Color(0xFF64748B),
+          color: AppColors.textSlate,
           fontSize: 11.5,
           fontWeight: FontWeight.w500,
         ),

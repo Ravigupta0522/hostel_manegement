@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../controllers/forgot_password_controller.dart';
@@ -15,7 +16,7 @@ class ForgotPasswordFormCard extends GetView<ForgotPasswordController> {
         decoration: BoxDecoration(
           color: AppColors.backgroundWhite,
           borderRadius: BorderRadius.circular(18),
-          border: Border.all(color: const Color(0xFFE2E8F0)),
+          border: Border.all(color: AppColors.borderLight),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.03),
@@ -35,17 +36,17 @@ class ForgotPasswordFormCard extends GetView<ForgotPasswordController> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Email or Student ID',
+                    AppStrings.emailOrStudentId,
                     style: AppTextStyles.labelMedium.copyWith(
-                      color: const Color(0xFF0F172A),
+                      color: AppColors.textDarkNavy,
                       fontWeight: FontWeight.w700,
                       fontSize: 13,
                     ),
                   ),
                   Text(
-                    'Campus Active',
+                    AppStrings.campusActive,
                     style: AppTextStyles.labelSmall.copyWith(
-                      color: const Color(0xFF0284C7),
+                      color: AppColors.portalSky,
                       fontWeight: FontWeight.w600,
                       fontSize: 11.5,
                     ),
@@ -58,20 +59,20 @@ class ForgotPasswordFormCard extends GetView<ForgotPasswordController> {
               TextFormField(
                 controller: controller.emailOrIdController,
                 style: AppTextStyles.bodyMedium.copyWith(
-                  color: const Color(0xFF0F172A),
+                  color: AppColors.textDarkNavy,
                   fontSize: 14,
                 ),
                 decoration: InputDecoration(
                   hintText: 'e.g. student.id@campus.edu',
                   hintStyle: AppTextStyles.bodySmall.copyWith(
-                    color: const Color(0xFF94A3B8),
+                    color: AppColors.textMuted,
                     fontSize: 14,
                   ),
                   filled: true,
                   fillColor: Colors.white,
                   prefixIcon: const Icon(
                     Icons.badge_outlined,
-                    color: Color(0xFF64748B),
+                    color: AppColors.textSlate,
                     size: 20,
                   ),
                   contentPadding: const EdgeInsets.symmetric(
@@ -80,21 +81,21 @@ class ForgotPasswordFormCard extends GetView<ForgotPasswordController> {
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                    borderSide: const BorderSide(color: AppColors.borderLight),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+                    borderSide: const BorderSide(color: AppColors.borderLight),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide:
-                        const BorderSide(color: Color(0xFF00288E), width: 1.5),
+                        const BorderSide(color: AppColors.portalNavy, width: 1.5),
                   ),
                 ),
                 validator: (val) {
                   if (val == null || val.trim().isEmpty) {
-                    return 'Please enter your campus email or student ID';
+                    return AppStrings.validationRequired;
                   }
                   return null;
                 },
@@ -103,9 +104,9 @@ class ForgotPasswordFormCard extends GetView<ForgotPasswordController> {
 
               // ── Sub-hint
               Text(
-                'Use the credential assigned during hostel room allotment.',
+                AppStrings.credentialAssignedHint,
                 style: AppTextStyles.bodySmall.copyWith(
-                  color: const Color(0xFF64748B),
+                  color: AppColors.textSlate,
                   fontSize: 11.5,
                   height: 1.35,
                 ),
@@ -122,12 +123,11 @@ class ForgotPasswordFormCard extends GetView<ForgotPasswordController> {
                     height: 48,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF00288E),
+                      color: AppColors.portalNavy,
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
-                          color:
-                              const Color(0xFF00288E).withValues(alpha: 0.28),
+                          color: AppColors.portalNavy.withValues(alpha: 0.28),
                           blurRadius: 10,
                           offset: const Offset(0, 4),
                         ),
@@ -153,7 +153,7 @@ class ForgotPasswordFormCard extends GetView<ForgotPasswordController> {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                'Send Verification Code',
+                                AppStrings.sendVerificationCode,
                                 style: AppTextStyles.labelLarge.copyWith(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,

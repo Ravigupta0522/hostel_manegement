@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 
 class ForgotPasswordHeroCard extends StatelessWidget {
@@ -15,13 +17,13 @@ class ForgotPasswordHeroCard extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFFEBF5FF),
-              Color(0xFFF3F7FE),
+              AppColors.cardLight,
+              AppColors.cardLightAlt,
             ],
           ),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: const Color(0xFFDBEAFE),
+            color: AppColors.borderSubtle,
             width: 1,
           ),
         ),
@@ -37,11 +39,11 @@ class ForgotPasswordHeroCard extends StatelessWidget {
                   width: 72,
                   height: 72,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFDDF0FC),
+                    color: AppColors.badgeBlueBg,
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF00288E).withValues(alpha: 0.08),
+                        color: AppColors.portalNavy.withValues(alpha: 0.08),
                         blurRadius: 12,
                         offset: const Offset(0, 4),
                       ),
@@ -51,7 +53,7 @@ class ForgotPasswordHeroCard extends StatelessWidget {
                     child: Icon(
                       Icons.lock_reset_rounded,
                       size: 38,
-                      color: Color(0xFF00288E),
+                      color: AppColors.portalNavy,
                     ),
                   ),
                 ),
@@ -64,7 +66,7 @@ class ForgotPasswordHeroCard extends StatelessWidget {
                     width: 24,
                     height: 24,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF006591),
+                      color: AppColors.portalOcean,
                       shape: BoxShape.circle,
                       border: Border.all(color: Colors.white, width: 2),
                     ),
@@ -81,9 +83,9 @@ class ForgotPasswordHeroCard extends StatelessWidget {
 
             // Title
             Text(
-              'Forgot Password?',
+              AppStrings.forgotPasswordHeroTitle,
               style: AppTextStyles.titleLarge.copyWith(
-                color: const Color(0xFF0F172A),
+                color: AppColors.textDarkNavy,
                 fontWeight: FontWeight.w800,
                 fontSize: 24,
                 letterSpacing: -0.4,
@@ -94,9 +96,9 @@ class ForgotPasswordHeroCard extends StatelessWidget {
 
             // Subtitle
             Text(
-              "No worries! Enter your registered campus email or Student ID, and we'll send a 6-digit verification code to reset your password.",
+              AppStrings.forgotPasswordHeroSub,
               style: AppTextStyles.bodySmall.copyWith(
-                color: const Color(0xFF64748B),
+                color: AppColors.textSlate,
                 fontSize: 12.5,
                 height: 1.45,
               ),
@@ -108,7 +110,7 @@ class ForgotPasswordHeroCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                color: const Color(0xFFE8EEFA),
+                color: AppColors.cardLightAlt,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -117,13 +119,13 @@ class ForgotPasswordHeroCard extends StatelessWidget {
                   const Icon(
                     Icons.info_outline_rounded,
                     size: 14,
-                    color: Color(0xFF475569),
+                    color: AppColors.textSlate,
                   ),
                   const SizedBox(width: 6),
                   Text(
-                    'Codes expire after 10 minutes',
+                    AppStrings.codesExpire10Min,
                     style: AppTextStyles.labelSmall.copyWith(
-                      color: const Color(0xFF475569),
+                      color: AppColors.textSlate,
                       fontWeight: FontWeight.w600,
                       fontSize: 11.5,
                     ),

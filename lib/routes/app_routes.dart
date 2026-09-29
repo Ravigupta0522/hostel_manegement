@@ -11,6 +11,7 @@ class AppRoutes {
   static const String forgotPassword = '/forgot-password';
   static const String otpVerification = '/otp-verification';
   static const String resetPassword = '/reset-password';
+  static const String resetPasswordSuccess = '/reset-password-success';
 
   // Student Routes
   static const String studentDashboard = '/student/dashboard';

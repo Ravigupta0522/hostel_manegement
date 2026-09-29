@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 
 class StudentRegisterHeaderCard extends StatelessWidget {
@@ -11,10 +13,10 @@ class StudentRegisterHeaderCard extends StatelessWidget {
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: const Color(0xFFEFF6FF),
+          color: AppColors.cardLight,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: const Color(0xFFDBEAFE),
+            color: AppColors.borderSubtle,
             width: 1,
           ),
         ),
@@ -30,7 +32,7 @@ class StudentRegisterHeaderCard extends StatelessWidget {
                 child: Icon(
                   Icons.domain_rounded,
                   size: 80,
-                  color: Color(0xFF1E40AF),
+                  color: AppColors.primary,
                 ),
               ),
             ),
@@ -42,9 +44,9 @@ class StudentRegisterHeaderCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Create Student Account',
+                    AppStrings.createStudentAccount,
                     style: AppTextStyles.titleLarge.copyWith(
-                      color: const Color(0xFF0F172A),
+                      color: AppColors.textDarkNavy,
                       fontWeight: FontWeight.w800,
                       fontSize: 23,
                       letterSpacing: -0.4,
@@ -52,9 +54,9 @@ class StudentRegisterHeaderCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    'Register with your official campus enrollment details to access your dorm & hostel pass.',
+                    AppStrings.createStudentAccountSub,
                     style: AppTextStyles.bodySmall.copyWith(
-                      color: const Color(0xFF64748B),
+                      color: AppColors.textSlate,
                       fontSize: 12.5,
                       height: 1.45,
                     ),

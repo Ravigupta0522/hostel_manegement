@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_text_styles.dart';
 
 class CampusBannerCard extends StatelessWidget {
@@ -77,7 +78,7 @@ class CampusBannerCard extends StatelessWidget {
                           ),
                           const SizedBox(width: 5),
                           Text(
-                            'Semester Autumn 2024',
+                            AppStrings.semesterAutumn2024,
                             style: AppTextStyles.labelSmall.copyWith(
                               color: Colors.white,
                               fontWeight: FontWeight.w700,
@@ -92,7 +93,7 @@ class CampusBannerCard extends StatelessWidget {
 
                     // Hall and Block info
                     Text(
-                      'North Wing • Block C • Digital Hall Access',
+                      AppStrings.hallDetails,
                       style: AppTextStyles.bodyMedium.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,

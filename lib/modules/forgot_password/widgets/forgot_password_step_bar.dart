@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 
 class ForgotPasswordStepBar extends StatelessWidget {
@@ -28,8 +30,8 @@ class ForgotPasswordStepBar extends StatelessWidget {
                 height: 6,
                 decoration: BoxDecoration(
                   color: isCurrent
-                      ? const Color(0xFF00288E)
-                      : const Color(0xFFD0E2FB),
+                      ? AppColors.portalNavy
+                      : AppColors.borderSubtle,
                   borderRadius: BorderRadius.circular(3),
                 ),
               );
@@ -38,9 +40,9 @@ class ForgotPasswordStepBar extends StatelessWidget {
 
           // Step count text
           Text(
-            'STEP $currentStep OF $totalSteps',
+            '${AppStrings.onboardingStep.toUpperCase()} $currentStep ${AppStrings.onboardingOf.toUpperCase()} $totalSteps',
             style: AppTextStyles.labelSmall.copyWith(
-              color: const Color(0xFF1E3A8A),
+              color: AppColors.primary,
               fontWeight: FontWeight.w800,
               fontSize: 11,
               letterSpacing: 0.5,
