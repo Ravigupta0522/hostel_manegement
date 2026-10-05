@@ -20,6 +20,7 @@ import '../modules/reset_password_success/views/reset_password_success_view.dart
 import '../modules/reset_password_success/bindings/reset_password_success_binding.dart';
 import '../modules/auth/bindings/auth_binding.dart';
 import '../modules/student/dashboard/views/student_dashboard_view.dart';
+import '../modules/student/dashboard/bindings/student_dashboard_binding.dart';
 import '../modules/admin/dashboard/views/admin_dashboard_view.dart';
 import 'app_routes.dart';
 
@@ -118,6 +119,7 @@ class AppPages {
     GetPage(
       name: AppRoutes.studentDashboard,
       page: () => const StudentDashboardView(),
+      binding: StudentDashboardBinding(),
       transition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 300),
     ),

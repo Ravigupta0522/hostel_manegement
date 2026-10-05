@@ -1,34 +1,23 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
+import 'package:get/get.dart';
+import '../../../../core/widgets/layout_widgets.dart';
+import '../controllers/student_dashboard_controller.dart';
+import 'desktop_student_dashboard_view.dart';
+import 'mobile_student_dashboard_view.dart';
 
-/// Placeholder — will be fully implemented in student module phase
-class StudentDashboardView extends StatelessWidget {
+class StudentDashboardView extends GetView<StudentDashboardController> {
   const StudentDashboardView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.background,
-      appBar: AppBar(
-        title: RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: 'Hostel',
-                style: AppTextStyles.titleSmall.copyWith(color: AppColors.textPrimary),
-              ),
-              TextSpan(
-                text: 'Flow',
-                style: AppTextStyles.titleSmall.copyWith(color: AppColors.primary),
-              ),
-            ],
-          ),
-        ),
-      ),
-      body: const Center(
-        child: Text('Student Dashboard — Coming Soon'),
-      ),
-    );
+    // Ensure controller is registered if opened directly (no binding)
+    if (!Get.isRegistered<StudentDashboardController>()) {
+      Get.put(StudentDashboardController());
+    }
+
+    if (Responsive.isDesktop(context)) {
+      return const DesktopStudentDashboardView();
+    }
+    return const MobileStudentDashboardView();
   }
 }
