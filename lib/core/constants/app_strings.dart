@@ -586,4 +586,51 @@ class AppStrings {
   static const String snackPermissionDenied =
       "You don't have permission to do this.";
   static const String snackFileDownloaded = 'File downloaded successfully!';
+
+  // ─────────────────────────────────────────────
+  // Student — Rules & Residence
+  // ─────────────────────────────────────────────
+  static const String rulesTitle = 'Hostel Rules & Code of Conduct';
+  static const String rulesSubtitle =
+      'Official Resident Guidelines & Safety Policies';
+  static const String rulesDownloadPdf = 'Download Hostel Rules (PDF)';
+  static const String rulesReassignmentInquiry =
+      'Request Room Reassignment / Inquire';
+  static const String rulesDefaultHallName = 'Westwood Hall & Oak Court';
+  static const String rulesDefaultHallLocation =
+      '412 University Blvd, Campus North Quad';
+  static const String rulesDefaultCampusZone = 'North Wing Campus';
+  static const String rulesCertifiedHallBadge = 'CERTIFIED RESIDENT HALL';
+  static const String rulesLiveOccupancy = 'Live Occupancy Status';
+  static const String rulesTotalBeds = 'Total Beds';
+  static const String rulesBookedBeds = 'Booked';
+  static const String rulesVacancies = 'Vacancies';
+  static const String rulesResidenceProfile = 'Residence Profile';
+  static const String rulesCommunityFacilities = 'Community Facilities';
+  static const String rulesResidentPortals = 'Resident Portals';
+  static const String rulesStaffHelpDesk = 'Staff & Help Desk';
+  static const String rulesWardenDesk = 'Warden Office Desk';
+  static const String rulesCampusSecurityDispatch =
+      'Campus Security Dispatch';
+  static const String rulesAdminDesk = 'Administrative Desk';
+  static const String rulesOpenPdf = 'Open PDF';
+  static const String rulesPdfSavedToStorage = 'Saved to system storage:';
+  static const String rulesPdfDownloading = 'Downloading Rules PDF';
+  static const String rulesPdfCompleted = 'Download Completed!';
+  static const String rulesPdfFileName = 'Westwood_Hall_Rules_2024-25.pdf';
+
+  // ─────────────────────────────────────────────
+  // Student — Settings
+  // ─────────────────────────────────────────────
+  static const String settingsTitle = 'Student Settings';
+  static const String settingsSubtitle = 'Manage your preferences & account';
+  static const String settingsVerifiedResident = 'VERIFIED RESIDENT';
+  static const String settingsPreferences = 'Preferences';
+  static const String settingsNotifications = 'Notifications';
+  static const String settingsSecurity = 'Security';
+  static const String settingsHostelInfo = 'Hostel & Room Information';
+  static const String settingsEmergencyContacts = 'Emergency Contacts';
+  static const String settingsDocuments = 'Resident Documents';
+  static const String settingsLegal = 'Legal & Policies';
+  static const String settingsAccountActions = 'Account Actions';
 }
