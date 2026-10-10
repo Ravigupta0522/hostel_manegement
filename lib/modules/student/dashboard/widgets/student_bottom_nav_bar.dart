@@ -44,19 +44,18 @@ class StudentBottomNavBar extends GetView<StudentDashboardController> {
               // 3. Center SCAN Action Button
               _buildScanButton(),
 
-              // 4. Alerts
+              // 4. Hostel Rules
               _buildNavItem(
                 index: 3,
-                icon: Icons.notifications_none_rounded,
-                label: 'Alerts',
-                hasBadge: true,
+                icon: Icons.menu_book_rounded,
+                label: 'Rules',
               ),
 
-              // 5. Profile
+              // 5. Settings
               _buildNavItem(
                 index: 4,
-                icon: Icons.person_outline_rounded,
-                label: 'Profile',
+                icon: Icons.settings_outlined,
+                label: 'Settings',
               ),
             ],
           ),

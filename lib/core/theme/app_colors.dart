@@ -58,6 +58,27 @@ class AppColors {
   static const Color shadowLight = Color(0x140F172A);
   static const Color transparent = Color(0x00000000);
 
+  // Extended Portal & Rules Design Tokens
+  static const Color primaryBlue = Color(0xFF1D4ED8);
+  static const Color linkBlue = Color(0xFF2563EB);
+  static const Color softBlue = Color(0xFFEFF6FF);
+  static const Color softBlueBorder = Color(0xFFDBEAFE);
+  static const Color softBlueBorderAlt = Color(0xFFBFDBFE);
+  static const Color softRose = Color(0xFFFFF1F2);
+  static const Color softRoseBorder = Color(0xFFFFE4E6);
+  static const Color rosePrimary = Color(0xFFE11D48);
+  static const Color softAmber = Color(0xFFFEF3C7);
+  static const Color softAmberBorder = Color(0xFFFDE68A);
+  static const Color amberText = Color(0xFFB45309);
+  static const Color amberIcon = Color(0xFFD97706);
+  static const Color softGreen = Color(0xFFF0FDF4);
+  static const Color softGreenBorder = Color(0xFFBBF7D0);
+  static const Color textGreenDark = Color(0xFF166534);
+  static const Color emeraldIcon = Color(0xFF16A34A);
+  static const Color pdfDarkNavy = Color(0xFF0F172A);
+  static const Color pdfDarkBar = Color(0xFF1E293B);
+  static const Color liveGreen = Color(0xFF10B981);
+
   // Splash specific
   static const Color splashBackground = Color(0xFFF0F4FF);
   static const Color splashIconBg = Color(0xFF1A3A8F);

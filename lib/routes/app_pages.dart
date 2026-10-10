@@ -22,6 +22,10 @@ import '../modules/auth/bindings/auth_binding.dart';
 import '../modules/student/dashboard/views/student_dashboard_view.dart';
 import '../modules/student/dashboard/bindings/student_dashboard_binding.dart';
 import '../modules/admin/dashboard/views/admin_dashboard_view.dart';
+import '../modules/student/settings/views/student_settings_view.dart';
+import '../modules/student/settings/bindings/student_settings_binding.dart';
+import '../modules/student/rules/views/student_rules_view.dart';
+import '../modules/student/rules/bindings/student_rules_binding.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -121,6 +125,20 @@ class AppPages {
       page: () => const StudentDashboardView(),
       binding: StudentDashboardBinding(),
       transition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentSettings,
+      page: () => const StudentSettingsView(),
+      binding: StudentSettingsBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 280),
+    ),
+    GetPage(
+      name: AppRoutes.studentRules,
+      page: () => const StudentRulesView(),
+      binding: StudentRulesBinding(),
+      transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 300),
     ),
 

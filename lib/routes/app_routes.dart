@@ -22,7 +22,9 @@ class AppRoutes {
   static const String studentLeave = '/student/leave';
   static const String studentMess = '/student/mess';
   static const String studentNotices = '/student/notices';
-  static const String studentProfile = '/student/profile';
+  static const String studentProfile   = '/student/profile';
+  static const String studentSettings  = '/student/settings';
+  static const String studentRules     = '/student/rules';
 
   // Admin Routes
   static const String adminDashboard = '/admin/dashboard';

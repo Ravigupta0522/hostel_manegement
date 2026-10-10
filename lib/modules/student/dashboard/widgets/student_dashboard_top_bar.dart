@@ -85,9 +85,68 @@ class StudentDashboardTopBar extends GetView<StudentDashboardController>
               ),
             ),
 
-            // Notification Bell with badge
+            // Notification Bell
             InkWell(
-              onTap: controller.showNotifications,
+              onTap: () {
+                Get.bottomSheet(
+                  Container(
+                    padding: const EdgeInsets.all(24),
+                    decoration: const BoxDecoration(
+                      color: AppColors.backgroundWhite,
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(24)),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Notifications',
+                              style: AppTextStyles.titleMedium
+                                  .copyWith(color: AppColors.textDarkNavy),
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.close,
+                                  color: AppColors.textSecondary),
+                              onPressed: () => Get.back(),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 12),
+                        const ListTile(
+                          leading: CircleAvatar(
+                            backgroundColor: Color(0xFFFEF3C7),
+                            child:
+                                Icon(Icons.payment, color: Color(0xFFD97706)),
+                          ),
+                          title: Text('Fee Due Reminder',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600, fontSize: 14)),
+                          subtitle: Text('Fee of ₹4,500 due on 10 Oct 2024.',
+                              style: TextStyle(fontSize: 12)),
+                        ),
+                        const ListTile(
+                          leading: CircleAvatar(
+                            backgroundColor: Color(0xFFDCFCE7),
+                            child: Icon(Icons.restaurant,
+                                color: Color(0xFF16A34A)),
+                          ),
+                          title: Text('Dinner Service Open',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600, fontSize: 14)),
+                          subtitle: Text(
+                              'Mess timing: 8:00 PM - 10:00 PM today.',
+                              style: TextStyle(fontSize: 12)),
+                        ),
+                        const SizedBox(height: 8),
+                      ],
+                    ),
+                  ),
+                );
+              },
               borderRadius: BorderRadius.circular(10),
               child: Container(
                 width: 38,
@@ -106,8 +165,8 @@ class StudentDashboardTopBar extends GetView<StudentDashboardController>
                       size: 20,
                     ),
                     Positioned(
-                      top: 8,
-                      right: 8,
+                      top: 7,
+                      right: 7,
                       child: Container(
                         width: 7,
                         height: 7,
@@ -129,7 +188,8 @@ class StudentDashboardTopBar extends GetView<StudentDashboardController>
                 Get.defaultDialog(
                   title: 'Sign Out',
                   titleStyle: AppTextStyles.titleMedium,
-                  middleText: 'Are you sure you want to sign out from the Student Portal?',
+                  middleText:
+                      'Are you sure you want to sign out from the Student Portal?',
                   textConfirm: 'Sign Out',
                   textCancel: 'Cancel',
                   confirmTextColor: Colors.white,
