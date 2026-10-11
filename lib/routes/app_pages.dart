@@ -26,6 +26,12 @@ import '../modules/student/settings/views/student_settings_view.dart';
 import '../modules/student/settings/bindings/student_settings_binding.dart';
 import '../modules/student/rules/views/student_rules_view.dart';
 import '../modules/student/rules/bindings/student_rules_binding.dart';
+import '../modules/student/rules/guidelines/views/student_community_guidelines_view.dart';
+import '../modules/student/rules/guidelines/bindings/community_guidelines_binding.dart';
+import '../modules/student/rules/amenities/views/student_amenities_view.dart';
+import '../modules/student/rules/amenities/bindings/student_amenities_binding.dart';
+import '../modules/student/rules/warden/views/student_warden_view.dart';
+import '../modules/student/rules/warden/bindings/student_warden_binding.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -138,6 +144,27 @@ class AppPages {
       name: AppRoutes.studentRules,
       page: () => const StudentRulesView(),
       binding: StudentRulesBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentGuidelines,
+      page: () => const StudentCommunityGuidelinesView(),
+      binding: CommunityGuidelinesBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentAmenities,
+      page: () => const StudentAmenitiesView(),
+      binding: StudentAmenitiesBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentWardenContact,
+      page: () => const StudentWardenView(),
+      binding: StudentWardenBinding(),
       transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 300),
     ),
