@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../routes/app_routes.dart';
 import '../services/rules_pdf_service.dart';
 
 class StudentRulesController extends GetxController {
@@ -52,193 +53,15 @@ class StudentRulesController extends GetxController {
   }
 
   void showDetailedRulesSheet() {
-    Get.bottomSheet(
-      Container(
-        padding: const EdgeInsets.all(24),
-        decoration: const BoxDecoration(
-          color: AppColors.backgroundWhite,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFEFF6FF),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const Icon(
-                          Icons.menu_book_rounded,
-                          color: AppColors.portalNavy,
-                          size: 20,
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Text(
-                        'Hostel Rules & Regulations',
-                        style: AppTextStyles.titleMedium
-                            .copyWith(color: AppColors.textDarkNavy),
-                      ),
-                    ],
-                  ),
-                  IconButton(
-                    icon:
-                        const Icon(Icons.close, color: AppColors.textSecondary),
-                    onPressed: () => Get.back(),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              _ruleItem(Icons.access_time_rounded, 'Curfew Timing',
-                  'All residents must return by 10:00 PM on weekdays and 11:00 PM on weekends. Late entry requires warden pre-approval.'),
-              _ruleItem(Icons.volume_off_rounded, 'Quiet Hours Policy',
-                  'Mandatory silence in corridors and rooms between 10:30 PM - 6:00 AM. Study pod acoustics respected at all times.'),
-              _ruleItem(Icons.no_drinks_rounded, 'Substance & Alcohol Ban',
-                  'Strict zero-tolerance policy against alcohol, smoking, vaping and illicit substances across entire campus premises.'),
-              _ruleItem(Icons.people_outline_rounded, 'Visitor Registration',
-                  'Outside guests permitted only in ground floor common lounges until 8:00 PM with security desk registration.'),
-              _ruleItem(Icons.cleaning_services_rounded, 'Sanitation & Hygiene',
-                  'Daily room tidiness expected. Routine sanitary inspections scheduled every Saturday at 11:00 AM.'),
-              _ruleItem(Icons.bolt_rounded, 'High-Wattage Appliances',
-                  'Electric heaters, induction plates, and heavy kitchen appliances are strictly prohibited inside resident rooms.'),
-              const SizedBox(height: 12),
-            ],
-          ),
-        ),
-      ),
-      isScrollControlled: true,
-    );
+    Get.toNamed(AppRoutes.studentGuidelines);
   }
 
   void showFacilitiesTimingsSheet() {
-    Get.bottomSheet(
-      Container(
-        padding: const EdgeInsets.all(24),
-        decoration: const BoxDecoration(
-          color: AppColors.backgroundWhite,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFEFF6FF),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const Icon(
-                          Icons.schedule_rounded,
-                          color: AppColors.portalNavy,
-                          size: 20,
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Text(
-                        'Facilities & Timings',
-                        style: AppTextStyles.titleMedium
-                            .copyWith(color: AppColors.textDarkNavy),
-                      ),
-                    ],
-                  ),
-                  IconButton(
-                    icon:
-                        const Icon(Icons.close, color: AppColors.textSecondary),
-                    onPressed: () => Get.back(),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              _ruleItem(Icons.restaurant_outlined, 'Central Mess Dining',
-                  'Breakfast: 7:30 AM - 9:30 AM\nLunch: 12:30 PM - 2:30 PM\nSnacks: 5:00 PM - 6:00 PM\nDinner: 7:30 PM - 10:00 PM'),
-              _ruleItem(
-                  Icons.local_laundry_service_outlined,
-                  'Laundry Hub (B1)',
-                  'Open 24/7. App token system. Heavy cycle dryers reserved 8:00 AM - 8:00 PM.'),
-              _ruleItem(Icons.fitness_center_rounded, 'Gym & Fitness Center',
-                  'Morning: 6:00 AM - 10:00 AM\nEvening: 4:30 PM - 9:30 PM\nTrainer present daily.'),
-              _ruleItem(Icons.menu_book_rounded, 'Study Library Pods',
-                  'Open 24/7 with high-speed campus Wi-Fi mesh and silent acoustic zoning.'),
-              const SizedBox(height: 12),
-            ],
-          ),
-        ),
-      ),
-      isScrollControlled: true,
-    );
+    Get.toNamed(AppRoutes.studentAmenities);
   }
 
   void showStaffContactSheet() {
-    Get.bottomSheet(
-      Container(
-        padding: const EdgeInsets.all(24),
-        decoration: const BoxDecoration(
-          color: AppColors.backgroundWhite,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFF0FDF4),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Icon(
-                        Icons.assignment_ind_rounded,
-                        color: Color(0xFF059669),
-                        size: 20,
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      'Warden & Hall Staff',
-                      style: AppTextStyles.titleMedium
-                          .copyWith(color: AppColors.textDarkNavy),
-                    ),
-                  ],
-                ),
-                IconButton(
-                  icon: const Icon(Icons.close, color: AppColors.textSecondary),
-                  onPressed: () => Get.back(),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            _ruleItem(Icons.person, 'Chief Warden: Dr. Vikram Sharma',
-                'Office 102, Ground Floor • Mon-Fri 10:00 AM - 4:00 PM\nPhone: +1 (555) 019-4820'),
-            _ruleItem(Icons.security, 'Head Proctor: Capt. Arvind Rao',
-                'Security Booth, Main Gate • Available 24/7 on call\nPhone: +1 (555) 019-9110'),
-            _ruleItem(Icons.build_rounded, 'Facility Manager: Ramesh Kumar',
-                'Maintenance Desk, B1 Level • 8:00 AM - 6:00 PM'),
-            const SizedBox(height: 12),
-          ],
-        ),
-      ),
-      isScrollControlled: true,
-    );
+    Get.toNamed(AppRoutes.studentWardenContact);
   }
 
   void showReassignmentDialog() {
@@ -328,46 +151,6 @@ class StudentRulesController extends GetxController {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _ruleItem(IconData icon, String title, String desc) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(7),
-            decoration: BoxDecoration(
-              color: const Color(0xFFEFF6FF),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Icon(icon, size: 16, color: AppColors.portalNavy),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: AppTextStyles.labelMedium.copyWith(
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.textDarkNavy,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  desc,
-                  style: AppTextStyles.bodySmall
-                      .copyWith(color: AppColors.textSecondary),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
