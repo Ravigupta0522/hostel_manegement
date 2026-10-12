@@ -16,6 +16,8 @@ class AppRoutes {
   // Student Routes
   static const String studentDashboard = '/student/dashboard';
   static const String studentRoom = '/student/room';
+  static const String studentAvailableRooms = '/student/available-rooms';
+  static const String studentRoomChangeRequest = '/student/room-change-request';
   static const String studentFees = '/student/fees';
   static const String studentComplaints = '/student/complaints';
   static const String studentAttendance = '/student/attendance';

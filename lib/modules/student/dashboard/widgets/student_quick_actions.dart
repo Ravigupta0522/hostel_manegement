@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../routes/app_routes.dart';
 import '../controllers/student_dashboard_controller.dart';
 
 class StudentQuickActions extends GetView<StudentDashboardController> {
@@ -46,15 +47,7 @@ class StudentQuickActions extends GetView<StudentDashboardController> {
             _buildActionButton(
               label: 'View Room',
               icon: Icons.door_front_door_outlined,
-              onTap: () {
-                Get.snackbar(
-                  'Room Information',
-                  'Sunrise Hostel • Room 204 • Bed B2',
-                  backgroundColor: const Color(0xFFF1F5F9),
-                  colorText: AppColors.textDarkNavy,
-                  snackPosition: SnackPosition.TOP,
-                );
-              },
+              onTap: () => Get.toNamed(AppRoutes.studentRoom),
             ),
             _buildActionButton(
               label: 'Attendance',

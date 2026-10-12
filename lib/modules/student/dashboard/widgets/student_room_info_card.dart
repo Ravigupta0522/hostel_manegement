@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../routes/app_routes.dart';
 import '../controllers/student_dashboard_controller.dart';
 
 class StudentRoomInfoCard extends GetView<StudentDashboardController> {
@@ -142,15 +143,7 @@ class StudentRoomInfoCard extends GetView<StudentDashboardController> {
 
           // Footer link
           InkWell(
-            onTap: () {
-              Get.snackbar(
-                'Room Details',
-                'Sunrise Hostel • Block A • Room 204 • 2 Roommates',
-                backgroundColor: const Color(0xFFF0FDF4),
-                colorText: const Color(0xFF166534),
-                snackPosition: SnackPosition.TOP,
-              );
-            },
+            onTap: () => Get.toNamed(AppRoutes.studentRoom),
             child: const Row(
               children: [
                 Text(
