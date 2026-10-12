@@ -32,6 +32,12 @@ import '../modules/student/rules/amenities/views/student_amenities_view.dart';
 import '../modules/student/rules/amenities/bindings/student_amenities_binding.dart';
 import '../modules/student/rules/warden/views/student_warden_view.dart';
 import '../modules/student/rules/warden/bindings/student_warden_binding.dart';
+import '../modules/student/room/views/student_room_view.dart';
+import '../modules/student/room/bindings/student_room_binding.dart';
+import '../modules/student/available_rooms/views/available_rooms_view.dart';
+import '../modules/student/available_rooms/bindings/available_rooms_binding.dart';
+import '../modules/student/room_change_request/views/room_change_request_view.dart';
+import '../modules/student/room_change_request/bindings/room_change_request_binding.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -131,6 +137,27 @@ class AppPages {
       page: () => const StudentDashboardView(),
       binding: StudentDashboardBinding(),
       transition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentRoom,
+      page: () => const StudentRoomView(),
+      binding: StudentRoomBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentAvailableRooms,
+      page: () => const AvailableRoomsView(),
+      binding: AvailableRoomsBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentRoomChangeRequest,
+      page: () => const RoomChangeRequestView(),
+      binding: RoomChangeRequestBinding(),
+      transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 300),
     ),
     GetPage(

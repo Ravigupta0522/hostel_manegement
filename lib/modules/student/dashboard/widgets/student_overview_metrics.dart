@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../routes/app_routes.dart';
 import '../controllers/student_dashboard_controller.dart';
 
 class StudentOverviewMetrics extends GetView<StudentDashboardController> {
@@ -47,6 +48,7 @@ class StudentOverviewMetrics extends GetView<StudentDashboardController> {
                         fontWeight: FontWeight.w500,
                       ),
                     )),
+                onTap: () => Get.toNamed(AppRoutes.studentRoom),
               ),
             ),
             const SizedBox(width: 8),
@@ -181,22 +183,26 @@ class StudentOverviewMetrics extends GetView<StudentDashboardController> {
     required Widget trailing,
     required Widget value,
     required Widget subtitle,
+    VoidCallback? onTap,
   }) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-      decoration: BoxDecoration(
-        color: AppColors.backgroundWhite,
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: AppColors.borderLight),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.03),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Column(
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(14),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        decoration: BoxDecoration(
+          color: AppColors.backgroundWhite,
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(color: AppColors.borderLight),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.03),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Top header row
@@ -221,9 +227,10 @@ class StudentOverviewMetrics extends GetView<StudentDashboardController> {
           value,
           const SizedBox(height: 3),
 
-          // Subtitle
-          subtitle,
-        ],
+            // Subtitle
+            subtitle,
+          ],
+        ),
       ),
     );
   }
