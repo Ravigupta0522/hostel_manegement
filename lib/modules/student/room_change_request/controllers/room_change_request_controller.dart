@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../routes/app_routes.dart';
+import '../../request_confirmation/bindings/request_confirmation_binding.dart';
+import '../../request_confirmation/views/request_confirmation_view.dart';
 
 class RoomChangeRequestController extends GetxController {
   // Current Allocation
@@ -145,98 +145,20 @@ class RoomChangeRequestController extends GetxController {
       return;
     }
 
-    // Success dialog
-    Get.dialog(
-      AlertDialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        title: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: const BoxDecoration(
-                color: Color(0xFFDCFCE7),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                Icons.check_circle_rounded,
-                color: Color(0xFF16A34A),
-                size: 24,
-              ),
-            ),
-            const SizedBox(width: 12),
-            const Expanded(
-              child: Text(
-                'Request Submitted',
-                style: TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w800,
-                  color: AppColors.textDarkNavy,
-                ),
-              ),
-            ),
-          ],
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Your room change request for ${targetRoom.value} has been logged under Express Review (within 24 hrs).',
-              style: const TextStyle(
-                fontSize: 13.5,
-                color: AppColors.textDarkNavy,
-                height: 1.4,
-              ),
-            ),
-            const SizedBox(height: 12),
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: const Color(0xFFEFF6FF),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: const Row(
-                children: [
-                  Icon(Icons.info_outline, size: 16, color: Color(0xFF1D4ED8)),
-                  SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      'Reserved Hold is active for 48 hours.',
-                      style: TextStyle(
-                        fontSize: 11.5,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF1D4ED8),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          ElevatedButton(
-            onPressed: () {
-              Get.back(); // close dialog
-              Get.offNamedUntil(
-                AppRoutes.studentRoom,
-                (route) => route.settings.name == AppRoutes.studentDashboard,
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF1D4ED8),
-              foregroundColor: Colors.white,
-              minimumSize: const Size(100, 40),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-            child: const Text('Back to Room'),
-          ),
-        ],
-      ),
+    // Navigate to Request Confirmation screen
+    Get.to(
+      () => const RequestConfirmationView(),
+      binding: RequestConfirmationBinding(),
+      arguments: {
+        'ticketId': '#RCR-2024-0982',
+        'currentRoom': currentRoom.value,
+        'currentLocation': currentDetails.value,
+        'requestedRoom': targetRoom.value,
+        'requestedLocation': targetDetails.value,
+        'statedReason': selectedReason.value,
+      },
+      transition: Transition.rightToLeft,
+      duration: const Duration(milliseconds: 300),
     );
   }
 }
