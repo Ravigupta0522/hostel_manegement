@@ -35,9 +35,13 @@ import '../modules/student/rules/warden/bindings/student_warden_binding.dart';
 import '../modules/student/room/views/student_room_view.dart';
 import '../modules/student/room/bindings/student_room_binding.dart';
 import '../modules/student/available_rooms/views/available_rooms_view.dart';
+import '../modules/student/room_detail/views/room_detail_view.dart';
+import '../modules/student/room_detail/bindings/room_detail_binding.dart';
 import '../modules/student/available_rooms/bindings/available_rooms_binding.dart';
 import '../modules/student/room_change_request/views/room_change_request_view.dart';
 import '../modules/student/room_change_request/bindings/room_change_request_binding.dart';
+import '../modules/student/request_confirmation/views/request_confirmation_view.dart';
+import '../modules/student/request_confirmation/bindings/request_confirmation_binding.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -154,9 +158,23 @@ class AppPages {
       transitionDuration: const Duration(milliseconds: 300),
     ),
     GetPage(
+      name: AppRoutes.studentRoomDetail,
+      page: () => const RoomDetailView(),
+      binding: RoomDetailBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 350),
+    ),
+    GetPage(
       name: AppRoutes.studentRoomChangeRequest,
       page: () => const RoomChangeRequestView(),
       binding: RoomChangeRequestBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentRequestConfirmation,
+      page: () => const RequestConfirmationView(),
+      binding: RequestConfirmationBinding(),
       transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 300),
     ),
