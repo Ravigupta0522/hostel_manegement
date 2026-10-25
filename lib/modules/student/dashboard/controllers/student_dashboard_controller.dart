@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../routes/app_routes.dart';
 
 class StudentDashboardController extends GetxController {
   // Navigation
@@ -225,85 +226,7 @@ class StudentDashboardController extends GetxController {
   }
 
   void showApplyLeaveDialog() {
-    Get.bottomSheet(
-      Container(
-        padding: const EdgeInsets.all(24),
-        decoration: const BoxDecoration(
-          color: AppColors.backgroundWhite,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Apply for Leave',
-                  style: AppTextStyles.titleMedium
-                      .copyWith(color: AppColors.textDarkNavy),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.close, color: AppColors.textSecondary),
-                  onPressed: () => Get.back(),
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
-            Text(
-              'Submit a digital leave request to Warden Office.',
-              style: AppTextStyles.bodyMedium
-                  .copyWith(color: AppColors.textSecondary),
-            ),
-            const SizedBox(height: 16),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Leave Reason',
-                hintText: 'e.g. Family Function / Medical',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-              width: double.infinity,
-              height: 48,
-              child: ElevatedButton(
-                onPressed: () {
-                  Get.back();
-                  Get.snackbar(
-                    'Leave Request Submitted',
-                    'Your leave request has been sent for Warden approval.',
-                    backgroundColor: const Color(0xFFE0F2FE),
-                    colorText: const Color(0xFF0369A1),
-                    icon: const Icon(Icons.assignment_turned_in,
-                        color: Color(0xFF0369A1)),
-                    snackPosition: SnackPosition.TOP,
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.portalNavy,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text(
-                  'Submit Application',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 12),
-          ],
-        ),
-      ),
-      isScrollControlled: true,
-    );
+    Get.toNamed(AppRoutes.studentLeave);
   }
 
   void showSubmitComplaintDialog() {

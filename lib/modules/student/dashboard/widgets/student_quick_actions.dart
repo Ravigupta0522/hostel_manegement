@@ -37,7 +37,7 @@ class StudentQuickActions extends GetView<StudentDashboardController> {
             _buildActionButton(
               label: 'Apply Leave',
               icon: Icons.calendar_month_outlined,
-              onTap: controller.showApplyLeaveDialog,
+              onTap: () => Get.toNamed(AppRoutes.studentLeave),
             ),
             _buildActionButton(
               label: 'Submit Complaint',

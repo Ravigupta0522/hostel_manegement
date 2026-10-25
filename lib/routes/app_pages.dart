@@ -42,6 +42,10 @@ import '../modules/student/room_change_request/views/room_change_request_view.da
 import '../modules/student/room_change_request/bindings/room_change_request_binding.dart';
 import '../modules/student/request_confirmation/views/request_confirmation_view.dart';
 import '../modules/student/request_confirmation/bindings/request_confirmation_binding.dart';
+import '../modules/student/leave/views/student_leave_view.dart';
+import '../modules/student/leave/bindings/student_leave_binding.dart';
+import '../modules/student/apply_leave/views/apply_leave_view.dart';
+import '../modules/student/apply_leave/bindings/apply_leave_binding.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -175,6 +179,20 @@ class AppPages {
       name: AppRoutes.studentRequestConfirmation,
       page: () => const RequestConfirmationView(),
       binding: RequestConfirmationBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentLeave,
+      page: () => const StudentLeaveView(),
+      binding: StudentLeaveBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentApplyLeave,
+      page: () => const ApplyLeaveView(),
+      binding: ApplyLeaveBinding(),
       transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 300),
     ),

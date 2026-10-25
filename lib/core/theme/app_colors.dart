@@ -79,6 +79,18 @@ class AppColors {
   static const Color pdfDarkBar = Color(0xFF1E293B);
   static const Color liveGreen = Color(0xFF10B981);
 
+  // Student Leave tokens
+  static const Color leaveCardBg = Color(0xFFF8FAFC);
+  static const Color leaveReviewBg = Color(0xFFFEF3C7);
+  static const Color leaveReviewText = Color(0xFFB45309);
+  static const Color leavePassBg = Color(0xFFDCFCE7);
+  static const Color leavePassText = Color(0xFF15803D);
+  static const Color leaveClosedBg = Color(0xFFFFE4E6);
+  static const Color leaveClosedText = Color(0xFFBE123C);
+  static const Color leaveOutpassBg = Color(0xFFF0FDF4);
+  static const Color leaveQrBg = Color(0xFFE0E7FF);
+  static const Color leaveQrText = Color(0xFF3730A3);
+
   // Splash specific
   static const Color splashBackground = Color(0xFFF0F4FF);
   static const Color splashIconBg = Color(0xFF1A3A8F);
