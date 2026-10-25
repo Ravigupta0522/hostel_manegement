@@ -633,4 +633,86 @@ class AppStrings {
   static const String settingsDocuments = 'Resident Documents';
   static const String settingsLegal = 'Legal & Policies';
   static const String settingsAccountActions = 'Account Actions';
+
+  // ─────────────────────────────────────────────
+  // Student — Leave Management
+  // ─────────────────────────────────────────────
+  static const String leaveManagementTitle = 'Leave Management';
+  static const String leaveManagementSubtitle =
+      'Manage and track your official hostel leave petitions, parent consents, and digital outpasses.';
+  static const String leaveNewRequestButton = '+ New Leave Request';
+  static const String leaveHostelLocationChip = 'Hostel Block B • Room 304';
+  static const String leaveBalanceStatusTitle = 'LEAVE BALANCE & STATUS';
+  static const String leaveSemester = 'Fall Semester 2026';
+  static const String leaveTotalPetitions = 'Total Petitions';
+  static const String leaveLogged = 'logged';
+  static const String leavePending = 'Pending';
+  static const String leaveAwaitingWarden = 'awaiting warden';
+  static const String leaveReviewBadge = 'Review';
+  static const String leaveApproved = 'Approved';
+  static const String leaveReadyToUse = 'ready to use';
+  static const String leavePassBadge = 'Pass';
+  static const String leaveRejected = 'Rejected';
+  static const String leaveParentDenied = 'parent denied';
+  static const String leaveClosedBadge = 'Closed';
+  static const String leaveUpcomingOutpass = 'UPCOMING APPROVED OUTPASS';
+  static const String leavePassNumber = 'Pass #OP-8821';
+  static const String leaveDiwaliBreakVacation = 'Diwali Break Vacation';
+  static const String leaveDiwaliBreakDates = 'Oct 28 - Nov 02, 2026 • 6 Days';
+  static const String leaveViewQr = 'VIEW QR';
+  static const String leaveParentVerified = 'Parent Verified';
+  static const String leaveGateAuthorized = 'Gate Authorized';
+  static const String leaveRecentRequests = 'Recent Requests';
+  static const String leaveViewAll = 'View All';
+  static const String leavePoliciesTitle = 'Leave Policies & Rules';
+  static const String leaveCurfewHours = 'Curfew Hours: 21:00 Daily';
+  static const String leaveHostelHandbook = 'Hostel Handbook';
+
+  // ─────────────────────────────────────────────
+  // Student — Apply Leave Form
+  // ─────────────────────────────────────────────
+  static const String applyLeaveTitle = 'Apply Leave';
+  static const String applyLeaveSubtitle =
+      'Submit your official hostel leave request for warden clearance';
+  static const String applyLeaveTerm = 'Term 2026–27';
+  static const String step1LeaveInfo = 'Leave Information';
+  static const String step1Of4 = 'STEP 1 OF 4';
+  static const String leaveTypeLabel = 'Leave Type *';
+  static const String docsMandatory = 'Docs mandatory';
+  static const String medicalLeaveDocAlert =
+      'Supporting document mandatory for Medical Leave approval.';
+  static const String startDateLabel = 'Start Date *';
+  static const String endDateLabel = 'End Date *';
+  static const String dateRangeHelper =
+      'Past dates disabled. Must be consecutive or valid calendar range.';
+  static const String totalLeaveDuration = 'Total Leave Duration';
+  static const String durationHelper = 'Both Start & End dates are inclusive';
+  static const String step2LeaveDetails = 'Leave Details';
+  static const String step2Of4 = 'STEP 2 OF 4';
+  static const String reasonForLeave = 'Reason for Leave *';
+  static const String destinationAddress =
+      'Destination / Address During Leave *';
+  static const String usePermanentHomeAddress =
+      'Use registered permanent home address';
+  static const String contactNumberDuringLeave =
+      'Contact Number During Leave *';
+  static const String step3ParentVerification =
+      'Parent / Guardian Verification';
+  static const String step3Of4 = 'STEP 3 OF 4';
+  static const String parentName = 'Parent / Guardian Name *';
+  static const String guardianContactNumber = 'Guardian Contact Number *';
+  static const String smsTokenNotice =
+      'Automated SMS verification token will be dispatched upon warden submission.';
+  static const String step4SupportingDoc = 'Supporting Document';
+  static const String requiredBadge = 'REQUIRED';
+  static const String medicalNotice =
+      "Medical Notice: Please attach doctor's prescription or clinic admission summary (Max 5 MB).";
+  static const String tapToUpload = 'Tap to upload prescription or report';
+  static const String uploadFileTypes =
+      'PDF, JPG, or PNG (up to 5MB file size)';
+  static const String beforeYouSubmitTitle = 'Before you submit';
+  static const String beforeYouSubmitDesc =
+      'Please review your leave dates, reason, destination, and contact details carefully. Overlapping requests or invalid credentials will trigger an automated warden audit check.';
+  static const String submitLeaveRequest = 'Submit Leave Request';
+  static const String cancelDiscardDraft = 'Cancel & Discard Draft';
 }

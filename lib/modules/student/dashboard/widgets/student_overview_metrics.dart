@@ -141,6 +141,7 @@ class StudentOverviewMetrics extends GetView<StudentDashboardController> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
+                onTap: () => Get.toNamed(AppRoutes.studentLeave),
               ),
             ),
             const SizedBox(width: 10),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../routes/app_routes.dart';
 import '../controllers/student_dashboard_controller.dart';
 
 class StudentLeaveRequestCard extends GetView<StudentDashboardController> {
@@ -9,21 +10,26 @@ class StudentLeaveRequestCard extends GetView<StudentDashboardController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: AppColors.backgroundWhite,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () => Get.toNamed(AppRoutes.studentLeave),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.borderLight),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.03),
-            blurRadius: 10,
-            offset: const Offset(0, 3),
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: AppColors.backgroundWhite,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: AppColors.borderLight),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.03),
+                blurRadius: 10,
+                offset: const Offset(0, 3),
+              ),
+            ],
           ),
-        ],
-      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -117,15 +123,7 @@ class StudentLeaveRequestCard extends GetView<StudentDashboardController> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
-                onTap: () {
-                  Get.snackbar(
-                    'Leave Status',
-                    'Request submitted on 03 Oct. Awaiting Warden approval.',
-                    backgroundColor: const Color(0xFFE0F2FE),
-                    colorText: const Color(0xFF0369A1),
-                    snackPosition: SnackPosition.TOP,
-                  );
-                },
+                onTap: () => Get.toNamed(AppRoutes.studentLeave),
                 child: const Row(
                   children: [
                     Text(
@@ -146,7 +144,7 @@ class StudentLeaveRequestCard extends GetView<StudentDashboardController> {
                 ),
               ),
               ElevatedButton(
-                onPressed: controller.showApplyLeaveDialog,
+                onPressed: () => Get.toNamed(AppRoutes.studentLeave),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.portalNavy,
                   elevation: 0,
@@ -170,6 +168,8 @@ class StudentLeaveRequestCard extends GetView<StudentDashboardController> {
           ),
         ],
       ),
+    ),
+    ),
     );
   }
 
