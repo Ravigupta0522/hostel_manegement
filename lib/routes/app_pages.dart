@@ -46,6 +46,8 @@ import '../modules/student/leave/views/student_leave_view.dart';
 import '../modules/student/leave/bindings/student_leave_binding.dart';
 import '../modules/student/apply_leave/views/apply_leave_view.dart';
 import '../modules/student/apply_leave/bindings/apply_leave_binding.dart';
+import '../modules/student/all_leave_requests/views/all_leave_requests_view.dart';
+import '../modules/student/all_leave_requests/bindings/all_leave_requests_binding.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -193,6 +195,13 @@ class AppPages {
       name: AppRoutes.studentApplyLeave,
       page: () => const ApplyLeaveView(),
       binding: ApplyLeaveBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentAllLeaveRequests,
+      page: () => const AllLeaveRequestsView(),
+      binding: AllLeaveRequestsBinding(),
       transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 300),
     ),

@@ -715,4 +715,28 @@ class AppStrings {
       'Please review your leave dates, reason, destination, and contact details carefully. Overlapping requests or invalid credentials will trigger an automated warden audit check.';
   static const String submitLeaveRequest = 'Submit Leave Request';
   static const String cancelDiscardDraft = 'Cancel & Discard Draft';
+
+  // ─────────────────────────────────────────────
+  // Student — All Leave Requests
+  // ─────────────────────────────────────────────
+  static const String allLeaveRequestsTitle = 'Leave Requests';
+  static const String searchLeaveHint = 'Search by Leave ID, type, or reason...';
+  static const String applyForNewLeave = 'Apply for New Leave';
+  static const String durationLabel = 'Duration';
+  static const String totalDaysLabel = 'Total';
+  static const String reasonPreviewLabel = 'Reason Preview';
+  static const String wardenRemarkLabel = 'Warden Remark';
+  static const String rejectionNoteLabel = 'Rejection Note';
+  static const String viewDetailsAction = 'View Details';
+
+  // ─────────────────────────────────────────────
+  // Student — Leave Review Confirmation
+  // ─────────────────────────────────────────────
+  static const String reviewLeaveTitle = 'Review Leave Details';
+  static const String reviewLeaveSubtitle =
+      'Please verify all information carefully before final submission to Warden.';
+  static const String confirmAndSubmit = 'Confirm & Submit Leave';
+  static const String editAndContinue = 'Edit Details (Go Back)';
+  static const String reviewDeclaration =
+      'I confirm that all details provided are accurate and my parents/guardians are informed.';
 }
