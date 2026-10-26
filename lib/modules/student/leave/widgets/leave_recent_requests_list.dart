@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../routes/app_routes.dart';
 import '../controllers/student_leave_controller.dart';
 
 class LeaveRecentRequestsList extends GetView<StudentLeaveController> {
@@ -49,7 +50,7 @@ class LeaveRecentRequestsList extends GetView<StudentLeaveController> {
               ],
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Get.toNamed(AppRoutes.studentAllLeaveRequests),
               borderRadius: BorderRadius.circular(6),
               child: Row(
                 children: [

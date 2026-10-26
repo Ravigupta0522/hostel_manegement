@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../leave/controllers/student_leave_controller.dart';
+import '../widgets/leave_review_confirmation_sheet.dart';
 
 class ApplyLeaveController extends GetxController {
   // Step 1: Leave Information
@@ -155,7 +156,7 @@ class ApplyLeaveController extends GetxController {
     if (reasonController.text.trim().isEmpty) {
       Get.snackbar(
         'Reason Required',
-        'Please enter a detailed reason for your leave.',
+        'Please enter a detailed reason for your leave before submitting.',
         snackPosition: SnackPosition.TOP,
         backgroundColor: AppColors.softAmber,
         colorText: AppColors.amberText,
@@ -174,21 +175,37 @@ class ApplyLeaveController extends GetxController {
       return;
     }
 
+    // Open review and confirmation sheet
+    if (Get.context != null) {
+      LeaveReviewConfirmationSheet.show(Get.context!);
+    }
+  }
+
+  void confirmAndFinalSubmit() {
     // Add new petition to StudentLeaveController if registered
     if (Get.isRegistered<StudentLeaveController>()) {
       final leaveCtrl = Get.find<StudentLeaveController>();
       final newRef =
-          'Ref: #REQ-${DateTime.now().millisecondsSinceEpoch.toString().substring(8)}';
+          '#LV-2026-${DateTime.now().millisecondsSinceEpoch.toString().substring(9)}';
       final newReq = {
+        'id': newRef,
         'type': selectedLeaveType.value,
         'ref': newRef,
         'status': 'Pending Review',
         'dates':
             '$formattedStartDate - $formattedEndDate ($durationInDays Days)',
+        'duration': '$formattedStartDate – $formattedEndDate',
+        'totalDays': '$durationInDays Days',
         'submittedDate': 'Submitted Today',
         'reason': reasonController.text.trim(),
         'hasDocument': isDocUploaded.value,
+        'docName': isDocUploaded.value ? uploadedFileName.value : null,
         'documentText': isDocUploaded.value ? '1 Document Attached' : null,
+        'destination': destinationController.text.trim().isNotEmpty
+            ? destinationController.text.trim()
+            : 'Registered Permanent Address',
+        'guardianContact':
+            '${parentNameController.text.trim()} (${parentRelation.value}) - ${guardianContactController.text.trim()}',
         'icon': selectedLeaveType.value == 'Medical Leave'
             ? Icons.medical_services_outlined
             : selectedLeaveType.value == 'Home Visit'
@@ -206,7 +223,7 @@ class ApplyLeaveController extends GetxController {
       leaveCtrl.pendingPetitions.value++;
     }
 
-    Get.back(); // Return to Leave Management screen
+    Get.back(); // Return from Apply Leave form back to Leave Management screen
 
     Get.snackbar(
       'Leave Petition Submitted',
