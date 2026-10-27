@@ -26,6 +26,8 @@ class AppRoutes {
   static const String studentLeave = '/student/leave';
   static const String studentApplyLeave = '/student/apply-leave';
   static const String studentAllLeaveRequests = '/student/all-leave-requests';
+  static const String studentOutpassDetail = '/student/outpass-detail';
+  static const String studentLeaveRequestDetail = '/student/leave-request-detail';
   static const String studentMess = '/student/mess';
   static const String studentNotices = '/student/notices';
   static const String studentProfile   = '/student/profile';

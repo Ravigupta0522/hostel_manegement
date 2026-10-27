@@ -312,14 +312,11 @@ class LeaveRecentRequestsList extends GetView<StudentLeaveController> {
               InkWell(
                 onTap: () {
                   if (req['status'] == 'Approved') {
-                    controller.showOutpassSlipDialog(req);
+                    Get.toNamed(AppRoutes.studentOutpassDetail, arguments: req);
                   } else {
-                    Get.snackbar(
-                      req['type'] as String,
-                      'Petition ${req['ref']} is currently ${req['status']}.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: AppColors.textDarkNavy,
-                      colorText: AppColors.textWhite,
+                    Get.toNamed(
+                      AppRoutes.studentLeaveRequestDetail,
+                      arguments: req,
                     );
                   }
                 },

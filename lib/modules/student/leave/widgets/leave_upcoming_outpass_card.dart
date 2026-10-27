@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../routes/app_routes.dart';
 import '../controllers/student_leave_controller.dart';
 
 class LeaveUpcomingOutpassCard extends GetView<StudentLeaveController> {
@@ -10,20 +11,28 @@ class LeaveUpcomingOutpassCard extends GetView<StudentLeaveController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: AppColors.backgroundWhite,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () => Get.toNamed(
+          AppRoutes.studentOutpassDetail,
+          arguments: controller.upcomingOutpass,
+        ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.softGreenBorder),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x0D10B981),
-            blurRadius: 12,
-            offset: Offset(0, 3),
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: AppColors.backgroundWhite,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: AppColors.softGreenBorder),
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0x0D10B981),
+                blurRadius: 12,
+                offset: Offset(0, 3),
+              ),
+            ],
           ),
-        ],
-      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -121,7 +130,10 @@ class LeaveUpcomingOutpassCard extends GetView<StudentLeaveController> {
               const SizedBox(width: 12),
               // QR Code Box (Clickable)
               InkWell(
-                onTap: controller.showQrOutpassDialog,
+                onTap: () => Get.toNamed(
+                  AppRoutes.studentOutpassDetail,
+                  arguments: controller.upcomingOutpass,
+                ),
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
                   padding: const EdgeInsets.symmetric(
@@ -205,6 +217,8 @@ class LeaveUpcomingOutpassCard extends GetView<StudentLeaveController> {
           ),
         ],
       ),
-    );
+    ),
+  ),
+);
   }
 }
