@@ -48,8 +48,10 @@ import '../modules/student/apply_leave/views/apply_leave_view.dart';
 import '../modules/student/apply_leave/bindings/apply_leave_binding.dart';
 import '../modules/student/all_leave_requests/views/all_leave_requests_view.dart';
 import '../modules/student/all_leave_requests/bindings/all_leave_requests_binding.dart';
-import '../modules/student/outpass_detail/views/outpass_detail_view.dart';
-import '../modules/student/outpass_detail/bindings/outpass_detail_binding.dart';
+
+
+import '../modules/student/approved_leave/views/approved_leave_view.dart';
+import '../modules/student/approved_leave/bindings/approved_leave_binding.dart';
 import '../modules/student/leave_request_detail/views/leave_request_detail_view.dart';
 import '../modules/student/leave_request_detail/bindings/leave_request_detail_binding.dart';
 import 'app_routes.dart';
@@ -211,8 +213,15 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.studentOutpassDetail,
-      page: () => const OutpassDetailView(),
-      binding: OutpassDetailBinding(),
+      page: () => const ApprovedLeaveView(),
+      binding: ApprovedLeaveBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.studentApprovedLeave,
+      page: () => const ApprovedLeaveView(),
+      binding: ApprovedLeaveBinding(),
       transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 300),
     ),

@@ -22,8 +22,8 @@ class DesktopOutpassDetailView extends GetView<OutpassDetailController> {
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 1040),
           child: const SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+            physics: BouncingScrollPhysics(),
+            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

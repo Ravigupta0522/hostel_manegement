@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../routes/app_routes.dart';
 import '../../leave/controllers/student_leave_controller.dart';
 import '../widgets/leave_review_confirmation_sheet.dart';
 
@@ -231,7 +232,18 @@ class ApplyLeaveController extends GetxController {
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: AppColors.textGreenDark,
       colorText: AppColors.textWhite,
-      duration: const Duration(seconds: 4),
+      duration: const Duration(seconds: 6),
+      mainButton: TextButton(
+        onPressed: () => Get.toNamed(AppRoutes.studentApprovedLeave),
+        child: const Text(
+          'VIEW PASS',
+          style: TextStyle(
+            color: Color(0xFF86EFAC),
+            fontWeight: FontWeight.w800,
+            fontSize: 12,
+          ),
+        ),
+      ),
       margin: const EdgeInsets.all(16),
       borderRadius: 12,
       icon: const Icon(Icons.check_circle_rounded, color: AppColors.textWhite),

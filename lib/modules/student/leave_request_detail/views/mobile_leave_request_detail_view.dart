@@ -17,10 +17,10 @@ class MobileLeaveRequestDetailView
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppColors.scaffoldLight,
-      appBar: const LeaveRequestTopBar(),
-      body: const SafeArea(
+      appBar: LeaveRequestTopBar(),
+      body: SafeArea(
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),

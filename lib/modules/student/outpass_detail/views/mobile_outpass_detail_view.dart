@@ -16,7 +16,7 @@ class MobileOutpassDetailView extends GetView<OutpassDetailController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppColors.scaffoldLight,
       appBar: OutpassTopBar(),
       body: SafeArea(

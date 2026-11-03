@@ -312,7 +312,7 @@ class LeaveRecentRequestsList extends GetView<StudentLeaveController> {
               InkWell(
                 onTap: () {
                   if (req['status'] == 'Approved') {
-                    Get.toNamed(AppRoutes.studentOutpassDetail, arguments: req);
+                    Get.toNamed(AppRoutes.studentApprovedLeave, arguments: req);
                   } else {
                     Get.toNamed(
                       AppRoutes.studentLeaveRequestDetail,

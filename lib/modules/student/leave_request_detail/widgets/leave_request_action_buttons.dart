@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../routes/app_routes.dart';
 import '../controllers/leave_request_detail_controller.dart';
 
 class LeaveRequestActionButtons extends GetView<LeaveRequestDetailController> {
@@ -11,6 +12,55 @@ class LeaveRequestActionButtons extends GetView<LeaveRequestDetailController> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        // 0. If Approved, show prominent View Approved Gate Pass (QR)
+        Obx(() {
+          if (controller.requestStatus.value
+              .toLowerCase()
+              .contains('approved')) {
+            return Column(
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  height: 48,
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      Get.toNamed(
+                        AppRoutes.studentApprovedLeave,
+                        arguments: {
+                          'id': controller.requestId.value,
+                          'type': controller.leaveType.value,
+                          'duration': controller.travelWindow.value,
+                          'wardenRemark': controller.wardenNoteText.value,
+                        },
+                      );
+                    },
+                    icon: const Icon(Icons.qr_code_2_rounded,
+                        size: 20, color: Colors.white),
+                    label: Text(
+                      'View Approved Gate Pass (QR)',
+                      style: AppTextStyles.labelMedium.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF0F172A),
+                      foregroundColor: Colors.white,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+              ],
+            );
+          }
+          return const SizedBox.shrink();
+        }),
+
         // 1. Primary Button: View Full Leave Application
         SizedBox(
           width: double.infinity,
