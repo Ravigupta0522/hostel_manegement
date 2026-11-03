@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import 'package:get/get.dart';
+import '../../../../routes/app_routes.dart';
 import 'leave_detail_bottom_sheet.dart';
 
 class LeaveRequestCardItem extends StatelessWidget {
@@ -370,7 +372,13 @@ class LeaveRequestCardItem extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: () => LeaveDetailBottomSheet.show(context, request),
+                onTap: () {
+                  if (status.toString().toLowerCase().contains('approved')) {
+                    Get.toNamed(AppRoutes.studentApprovedLeave, arguments: request);
+                  } else {
+                    LeaveDetailBottomSheet.show(context, request);
+                  }
+                },
                 borderRadius: BorderRadius.circular(6),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 4),
@@ -378,7 +386,9 @@ class LeaveRequestCardItem extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        AppStrings.viewDetailsAction,
+                        status.toString().toLowerCase().contains('approved')
+                            ? 'View Gate Pass (QR)'
+                            : AppStrings.viewDetailsAction,
                         style: AppTextStyles.labelSmall.copyWith(
                           color: const Color(0xFF1E40AF),
                           fontSize: 11.5,

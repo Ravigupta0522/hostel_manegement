@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../routes/app_routes.dart';
 
 class LeaveDetailBottomSheet extends StatelessWidget {
   final Map<String, dynamic> request;
@@ -415,7 +416,14 @@ class LeaveDetailBottomSheet extends StatelessWidget {
             width: double.infinity,
             height: 44,
             child: ElevatedButton(
-              onPressed: () => Get.back(),
+              onPressed: () {
+                if (isApproved) {
+                  Get.back();
+                  Get.toNamed(AppRoutes.studentApprovedLeave, arguments: request);
+                } else {
+                  Get.back();
+                }
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF1E40AF),
                 foregroundColor: Colors.white,
@@ -423,7 +431,7 @@ class LeaveDetailBottomSheet extends StatelessWidget {
                 elevation: 0,
               ),
               child: Text(
-                'Close',
+                isApproved ? 'View Approved Gate Pass (QR)' : 'Close',
                 style: AppTextStyles.labelLarge.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
